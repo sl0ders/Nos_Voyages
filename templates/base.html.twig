@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('sass/style.scss') }}">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+{% block header %}
+{% endblock %}
+{% block sidebar_left %}{% endblock %}
+
+{% block body %}{% endblock %}
+
+{% block sidebar_right %}{% endblock %}
+
+{% block javascripts %}{% endblock %}
+<script src="{{ asset('js/Popper.min.js') }}"></script>
+<script src="{{ asset('js/jQuery.js') }}"></script>
+<script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>
+</body>
+</html>
