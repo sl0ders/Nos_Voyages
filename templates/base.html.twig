@@ -7,23 +7,60 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('sass/style.scss') }}">
+    <link rel="stylesheet" href="{{ asset('sass/style.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
 {% block header %}
+    {% include('layout/_header.html.twig') %}
 {% endblock %}
-{% block sidebar_left %}{% endblock %}
 
-{% block body %}{% endblock %}
+<main class="container-fluid">
+    <div class="row">
 
-{% block sidebar_right %}{% endblock %}
+        {% block siderbar_left %}
+            {% include('layout/_sidebar_left.html.twig') %}
+        {% endblock %}
+
+        <div class="col-md-8 part-center">
+            {% block body %}
+            {% endblock %}
+        </div>
+
+        {% block sidebar_right %}
+            {% include('layout/_sidebar_right.html.twig') %}
+        {% endblock %}
+
+    </div>
+</main>
+
+{% block footer %}
+    {% include('layout/_footer.html.twig') %}
+{% endblock %}
 
 {% block javascripts %}{% endblock %}
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script>
+    $('.estouest').hide();
+    $('.menu-ouest').hide();
+    $('.menu-est').hide();
+    $('.france').click(() => {
+        $('.estouest').toggle();
+        $('.est').click(() => {
+            $('.menu-est').toggle()
+        });
+        $('.ouest').click(() => {
+            $('.menu-ouest').toggle()
+        })
+    })
+</script>
 <script src="{{ asset('js/Popper.min.js') }}"></script>
-<script src="{{ asset('js/jQuery.js') }}"></script>
 <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
+<link rel="icon" href="{{ asset('img/favicon.ico') }}"/>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<header>
+
+    <div class="banner">
+        {% if app.user %}
+            <form action="{{ path('app_logout') }}"  class="connection">
+                <label for="deconnection">
+                <button name="deconnection" type="submit" class="btn-danger btn">Se déconnecter</button>
+                </label>
+            </form>
+        {% else %}
+
+            <form action="{{ path('app_login') }}" method="post" class="connection">
+                <label for="adresse_email">
+                    <span>Email</span>
+                    <input type="text" name="_username" placeholder="Adresse email ..." id="adresse_email">
+                </label>
+                <label for="mot_de_passe">
+                    <span>Mot de passe</span>
+                    <input type="text" name="_password" id="mot_de_passe" placeholder="Mot de passe ...">
+                </label>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <button type="submit" style="background-color: transparent; border:none; cursor: pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M12 4v-4l12 12-12 12v-4h-12v-16z" fill="white"/>
+                    </svg>
+                </button>
+                <div class="col-md-7 m-auto">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                </div>
+            </form>
+        {% endif %}
+    </div>
+    <h1>Une vie, des voyages</h1>
+</header>
