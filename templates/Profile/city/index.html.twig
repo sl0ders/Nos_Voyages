@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les villes de france{% endblock %}
+
+{% block body %}
+    <div class="index">
+        <div class="map-index">
+            <h2> {{ pays.name }}</h2>
+            {% for city in cities %}
+                <form action="{{ path('picture_index', {'pays':  city.pays ,'city': city.name |slugify('-', ' ') }) }}" method="get">
+                    <button type="submit" class="btn button-js city-name {{ city.name }}"> {{ city.name }}</button>
+                </form>
+            {% endfor %}
+            <img src="../../img/{{ pays.map }}" alt="">
+        </div>
+    </div>
+{% endblock %}

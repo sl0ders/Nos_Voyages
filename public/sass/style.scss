@@ -1,3 +1,14 @@
+.button-js {
+  border: #86cfda 1px solid;
+  background-color: #cde7f2;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.5em;
+  &:hover {
+    box-shadow: #0c5460 5px 0 20px;
+  }
+}
+
 body, html {
   margin: 0 auto;
   padding: 0;
@@ -90,20 +101,10 @@ header {
   }
 
   button {
-    border: #86cfda 1px solid;
-    background-color: #cde7f2;
-    border-radius: 5px;
-    padding: 5px;
-    list-style: none;
-    font-size: 1.5em;
     margin: 10px auto;
+    list-style: none;
     display: flex;
     justify-content: space-between;
-    width: 90%;
-
-    &:hover {
-      box-shadow: #0c5460 5px 0 20px;
-    }
   }
 
   a {
@@ -126,11 +127,16 @@ header {
   text-shadow: #2b3664 5px 0 20px;
   background-color: rgba(255, 255, 255, 0.6);
 
+  #mapid {
+    height: 500px;
+    width: 700px;
+  }
+
   .vrac {
     height: 320px;
 
     img.post {
-      background-color: rgba(255,255,255,0.9);
+      background-color: rgba(255, 255, 255, 0.9);
     }
 
     h3 {
@@ -151,6 +157,105 @@ header {
     font-family: "Goudy Old Style", serif;
     text-align: center;
     font-size: 1.5em;
+  }
+
+  .index {
+    text-align: center;
+    position: relative;
+
+    h2 {
+      margin-top: 50px;
+    }
+
+    .map-index {
+      img {
+        padding-top: 80px;
+        width: 80%;
+      }
+
+      .city-name {
+        position: absolute;
+        width: 9%;
+        @media screen and (max-width: 2106px) {
+          width: 12%;
+        }
+        @media screen and (max-width: 1585px) {
+          width: 18%;
+        }
+
+        &.New {
+          top: 45%;
+          right: 8%;
+        }
+
+        &.Strasbourg {
+          top: 35%;
+          right: 5%;
+        }
+
+        &.Marseille {
+          top: 88%;
+          right: 25%;;
+        }
+      }
+    }
+  }
+
+  .grid {
+    padding: 16px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 16px;
+
+    a {
+      position: relative;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      .bubble-text {
+        font-family: "Goudy Old Style", serif;
+        color: #1b1e21;
+        position: absolute;
+
+        background: rgba(255, 255, 255, .8);
+        padding: 7px 15px;
+        border-radius: 3px;
+        box-shadow: #2b3664 5px 0 20px;
+        width: 350px;
+        z-index: 25;
+        opacity: 0;
+        transition-property: opacity; /* Active la transition sur background-color */
+        transition-duration: 0.3s; /* La transition dure 1s */
+        bottom: 90%;
+        right: -40%;
+
+        h3 {
+          text-align: center;
+          font-weight: 900;
+          border-bottom: solid 1px black;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          top: 100%;
+          left: 10%;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-top: 20px solid rgba(255, 255, 255, .8);
+
+        }
+      }
+      &:hover {
+        .bubble-text {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 

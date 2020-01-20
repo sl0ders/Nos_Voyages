@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Picture;
 use App\Form\PictureType;
@@ -11,22 +11,26 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/picture")
+ * @Route("/admin/picture")
  */
 class PictureController extends AbstractController
 {
     /**
      * @Route("/", name="picture_index", methods={"GET"})
+     * @param PictureRepository $pictureRepository
+     * @return Response
      */
     public function index(PictureRepository $pictureRepository): Response
     {
-        return $this->render('picture/index.html.twig', [
+        return $this->render('Admin/picture/index.html.twig', [
             'pictures' => $pictureRepository->findAll(),
         ]);
     }
 
     /**
      * @Route("/new", name="picture_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -42,7 +46,7 @@ class PictureController extends AbstractController
             return $this->redirectToRoute('picture_index');
         }
 
-        return $this->render('picture/new.html.twig', [
+        return $this->render('Admin/picture/new.html.twig', [
             'picture' => $picture,
             'form' => $form->createView(),
         ]);
@@ -50,16 +54,21 @@ class PictureController extends AbstractController
 
     /**
      * @Route("/{id}", name="picture_show", methods={"GET"})
+     * @param Picture $picture
+     * @return Response
      */
     public function show(Picture $picture): Response
     {
-        return $this->render('picture/show.html.twig', [
+        return $this->render('Admin/picture/show.html.twig', [
             'picture' => $picture,
         ]);
     }
 
     /**
      * @Route("/{id}/edit", name="picture_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Picture $picture
+     * @return Response
      */
     public function edit(Request $request, Picture $picture): Response
     {
@@ -72,7 +81,7 @@ class PictureController extends AbstractController
             return $this->redirectToRoute('picture_index');
         }
 
-        return $this->render('picture/edit.html.twig', [
+        return $this->render('Admin/picture/edit.html.twig', [
             'picture' => $picture,
             'form' => $form->createView(),
         ]);
@@ -80,6 +89,9 @@ class PictureController extends AbstractController
 
     /**
      * @Route("/{id}", name="picture_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Picture $picture
+     * @return Response
      */
     public function delete(Request $request, Picture $picture): Response
     {

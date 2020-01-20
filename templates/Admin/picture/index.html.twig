@@ -9,21 +9,25 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>Images</th>
+                <th>Titres</th>
                 <th>Description</th>
-                <th>Day_of_taking</th>
-                <th>Link</th>
-                <th>actions</th>
+                <th>Jour de la prise</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for picture in pictures %}
             <tr>
                 <td>{{ picture.id }}</td>
-                <td>{{ picture.name }}</td>
+                <td>
+                    <a href="../../img/pictures/{{ picture.link }}"><img src="../../img/pictures/{{ picture.link }}" alt="{{ picture.title }}" width="250"
+                                      height="250">
+                    </a>
+                </td>
+                <td>{{ picture.title }}</td>
                 <td>{{ picture.description }}</td>
                 <td>{{ picture.dayOfTaking }}</td>
-                <td>{{ picture.link }}</td>
                 <td>
                     <a href="{{ path('picture_show', {'id': picture.id}) }}">show</a>
                     <a href="{{ path('picture_edit', {'id': picture.id}) }}">edit</a>

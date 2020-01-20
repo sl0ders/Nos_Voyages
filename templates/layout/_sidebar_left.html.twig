@@ -1,64 +1,10 @@
 <div class="col-md-2 part-left">
     <h2>Nos destinations</h2>
-    <button type="button" class="france" href="">
-        France
-        <img src="{{ asset('img/france_logo.png') }}" width="30" height="30" alt="" class="logo">
-    </button>
-    <div class="estouest">
-        <button class="col-6 est">Est</button>
-        <div class="menu-est col-9">
-            <button type="button" href="">Perpignan</button>
-            <button type="button" href="">Marseille</button>
-            <button type="button" href="">Hyeres (porquerolles)</button>
-            <button type="button" href="">les baux-de-provence</button>
-            <button type="button" href="">Canne</button>
-            <button type="button" href="">Thann</button>
-            <button type="button" href="">Kaysersberg</button>
-            <button type="button" href="">lausanne</button>
-            <button type="button" href="">Riquewihr</button>
-            <button type="button" href="">Mulhouse</button>
-            <button type="button" href="">Colmar</button>
-            <button type="button" href="">Strasbourg</button>
-        </div>
-        <button class="col-6 ouest">Ouest</button>
-        <div class="menu-ouest col-9">
-            <button type="button" href="">Saint-Sébastien</button>
-            <button type="button" href="">Biarritz</button>
-            <button type="button" href="">Biscarrosse</button>
-            <button type="button" href="">Arcachon</button>
-            <button type="button" href="">Ile de ré</button>
-            <button type="button" href="">Nante</button>
-            <button type="button" href="">Vanne</button>
-            <button type="button" href="">Perros Guirec</button>
-            <button type="button" href="">Saint Malot</button>
-            <button type="button" href="">Le mont St-michel</button>
-        </div>
-    </div>
-    <button type="button" href="">
-        Suisse
-        <img src="{{ asset('img/suisse_logo.png') }}" width="30" height="30" alt="" class="logo">
-    </button>
-    <button type="button" href="">
-        Chine
-        <img src="{{ asset('img/chine_logo.png') }}" width="30" height="30" alt="" class="logo">
-    </button>
-    <button type="button" href="">
-        Marrakech
-        <img src="{{ asset('img/marrakech_logo.png') }}" width="30" height="20" alt="" class="logo mt-2">
-    </button>
-    <button type="button" href="">
-        Londres
-        <img src="{{ asset('img/londre_logo.png') }}" width="30" height="30" alt="" class="logo"></button>
-    <button type="button" href="">
-        Bali
-        <img src="{{ asset('img/bali_logo.png') }}" width="30" height="30" alt="" class="logo"></button>
-    <button type="button" href="">
-        New York
-        <img src="{{ asset('img/new_york_logo.png') }}" width="30" height="30" alt="" class="logo">
-    </button>
-    <button type="button" href="">
-        Australie
-        <img src="{{ asset('img/australie_logo.png') }}" width="30" height="30" alt="" class="logo">
-    </button>
+    {% for singlepays in pays %}
+        <form action="{{ path('pays_index', {'name':  singlepays.name }) }}">
+        <button type="submit" class="btn button-js">{{ singlepays.name }}</button>
+        </form>
+    {% endfor %}
 </div>
+
 

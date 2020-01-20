@@ -24,11 +24,6 @@
                         <path d="M12 4v-4l12 12-12 12v-4h-12v-16z" fill="white"/>
                     </svg>
                 </button>
-                <div class="col-md-7 m-auto">
-                    {% if error %}
-                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
-                </div>
             </form>
         {% endif %}
     </div>

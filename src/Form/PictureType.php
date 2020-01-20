@@ -12,7 +12,7 @@ class PictureType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
+            ->add('title')
             ->add('description')
             ->add('day_of_taking')
             ->add('link')
