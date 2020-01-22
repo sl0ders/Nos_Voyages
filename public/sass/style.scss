@@ -1,4 +1,4 @@
-.button-js {
+.button-primary {
   border: #86cfda 1px solid;
   background-color: #cde7f2;
   border-radius: 5px;
@@ -7,6 +7,19 @@
 
   &:hover {
     box-shadow: #0c5460 5px 0 20px;
+  }
+}
+
+.button-danger {
+  border: #da5751 1px solid;
+  background-color: #f2b9bd;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.5em;
+  margin: auto;
+
+  &:hover {
+    box-shadow: #601113 5px 0 20px;
   }
 }
 
@@ -161,6 +174,46 @@ header {
   text-shadow: #2b3664 5px 0 20px;
   background-color: rgba(255, 255, 255, 0.6);
 
+  .modal-content {
+    background-color: rgba(#b2d4ee, .9);
+    font-family: "Goudy Old Style", serif;
+
+    h2 {
+      font-weight: 900;
+      font-size: 3em;
+    }
+
+    label, button {
+      font-size: 1.4em;
+    }
+
+    .container {
+      padding: 10px;
+
+      .cross {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 25;
+        color: #1b1e21;
+        width: 30px;
+        height: 30px;
+        background: url('../img/crossModal.svg') 100% 100%;
+        cursor: pointer;
+
+        &:hover {
+          opacity: .5;
+        }
+      }
+
+      .row {
+        padding: 60px;
+
+      }
+    }
+  }
+
+
   .admin-home {
     text-align: center;
     height: 300px;
@@ -169,6 +222,7 @@ header {
     a {
       text-decoration: none;
       color: #1b1e21;
+
       h3 {
         text-align: center;
         margin: 20px;

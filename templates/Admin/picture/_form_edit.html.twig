@@ -1,16 +1,21 @@
-<div class="text-center mb-5">
-    <img id="output" src="{{ vich_uploader_asset(picture, 'imageFile')|imagine_filter('thumb') }}" width='500' alt="">
+<div class="container">
+    <a class="cross"></a>
+    <h2 class="text-center">Modification de la photo {{ picture.title }}</h2>
+    <div class="row">
+        <img id="output" class="mr-5" src="{{ vich_uploader_asset(picture, 'imageFile')|imagine_filter('thumb') }}" width='500'
+             alt="">
+        <div class="ml-5"> {{ form_start(form, {'action' : path('admin_picture_edit', {'id' : picture.id})}) }}
+            {{ form_row(form.title,{'label': 'Titre' }) }}
+            {{ form_row(form.author,{'label': 'Auteur' }) }}
+            {{ form_row(form.imageFile,{'attr': {'accept': 'image/', 'onchange': 'loadFile(event)'}}) }}
+            {{ form_row(form.description,{'label': 'Description' }) }}
+            <button class="btn">{{ button_label|default('Modifier') }}</button>
+            {{ form_end(form) }}</div>
+    </div>
 </div>
-{{ form_start(form, {'action' : path('admin_picture_edit', {'id' : picture.id})}) }}
-{{ form_row(form.title,{'label': 'Titre' }) }}
-{{ form_row(form.author,{'label': 'Auteur' }) }}
-{{ form_row(form.imageFile,{'attr': {'accept': 'image/', 'onchange': 'loadFile(event)'}}) }}
-{{ form_row(form.description,{'label': 'Description' }) }}
-<button class="btn">{{ button_label|default('Modifier') }}</button>
-{{ form_end(form) }}
 <script>
-    var loadFile = function(event) {
-        var output = document.getElementById('output');
+    let loadFile = function (event) {
+        let output = document.getElementById('output');
         output.src = URL.createObjectURL(event.target.files[0]);
     };
 </script>

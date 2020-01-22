@@ -1,10 +1,27 @@
-{{ form_start(form, {'action' : path('admin_picture_new')}) }}
-{{ form_row(form.title,{'label': 'Titre' }) }}
-{{ form_row(form.author,{'label': 'Auteur' }) }}
-{{ form_row(form.dayOfTaking,{'label': 'Jour de prise' }) }}
-{{ form_row(form.pays,{'label': 'Pays' }) }}
-{{ form_row(form.city,{'label': 'Ville' }) }}
-{{ form_row(form.imageFile) }}
-{{ form_row(form.description,{'label': 'Description' }) }}
-<button class="btn">{{ button_label|default('Créer') }}</button>
-{{ form_end(form) }}
+<div class="container">
+    <a class="cross"></a>
+    <h2 class="text-center">Insertion d'une nouvelle photo</h2>
+    <div class="row">
+        <div class="col-md-5 mr-5">
+            <img src="" alt="">
+        </div>
+        <div class="col-md-5 ml-5">
+            {{ form_start(form, {'action' : path('admin_picture_new')}) }}
+            {{ form_row(form.title,{'label': 'Titre' }) }}
+            {{ form_row(form.author,{'label': 'Auteur' }) }}
+            {{ form_row(form.dayOfTaking,{'label': 'Jour de prise' }) }}
+            {{ form_row(form.pays,{'label': 'Pays' }) }}
+            {{ form_row(form.city,{'label': 'Ville' }) }}
+            {{ form_row(form.imageFile) }}
+            {{ form_row(form.description,{'label': 'Description' }) }}
+            <button class="btn">{{ button_label|default('Créer') }}</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+<script>
+    let loadFile = function (event) {
+        let output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>

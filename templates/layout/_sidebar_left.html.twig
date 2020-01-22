@@ -2,7 +2,7 @@
     <h2>Nos destinations</h2>
     {% for singlepays in pays %}
         <form action="{{ path('pays_index', {'name':  singlepays.name }) }}">
-        <button type="submit" class="btn button-js">{{ singlepays.name }}</button>
+        <button type="submit" class="btn button-primary">{{ singlepays.name }}</button>
         </form>
     {% endfor %}
 </div>

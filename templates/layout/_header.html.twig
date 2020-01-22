@@ -3,10 +3,10 @@
     <div class="banner">
         {% if app.user %}
             <a href="{{ path('admin_home') }}">
-                <button type="button" href="{{ path('admin_home') }}" class="btn button-js admin-btn">Acceder a l'administration</button>
+                <button type="button" href="{{ path('admin_home') }}" class="btn button-primary admin-btn">Acceder a l'administration</button>
             </a>
             <a href="{{ path('app_logout') }}">
-                <button name="deconnection" type="submit" class="btn button-js deconnection">Se déconnecter</button>
+                <button name="deconnection" type="submit" class="btn button-primary deconnection">Se déconnecter</button>
             </a>
         {% else %}
 

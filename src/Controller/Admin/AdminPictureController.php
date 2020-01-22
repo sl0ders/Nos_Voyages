@@ -50,7 +50,7 @@ class AdminPictureController extends AbstractController
             return $this->redirectToRoute('admin_picture_index');
         }
 
-        return $this->render('Admin/picture/new.html.twig', [
+        return $this->render('Admin/picture/_form_new.html.twig', [
             'picture' => $picture,
             'form' => $form->createView(),
         ]);
@@ -72,8 +72,6 @@ class AdminPictureController extends AbstractController
      * @Route("/{id}/edit", name="admin_picture_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Picture $picture
-     * @param CacheManager $cacheManager
-     * @param UploaderHelper $helper
      * @return Response
      */
     public function edit(Request $request, Picture $picture): Response
