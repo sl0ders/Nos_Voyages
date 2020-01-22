@@ -8,7 +8,7 @@ import {enableBodyScroll, disableBodyScroll} from './body-scroll-lock.js';
 class Lightbox {
 
   static init() {
-    const links = Array.from(document.querySelectorAll('a[href$=".png"], a[href$=".jpg"], a[href$=".jpeg"]'));
+    const links = Array.from(document.querySelectorAll('a[href$=".png"], a[href$=".jpg"], a[href$=".jpeg"], a[href$=".JPG"], a[href$=".JPEG"]'));
     const gallery = links.map(link => link.getAttribute('href'));
     links.forEach(link => link.addEventListener('click', e => {
       e.preventDefault();

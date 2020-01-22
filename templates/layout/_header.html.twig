@@ -2,30 +2,32 @@
 
     <div class="banner">
         {% if app.user %}
-            <form action="{{ path('app_logout') }}"  class="connection">
-                <label for="deconnection">
-                <button name="deconnection" type="submit" class="btn-danger btn">Se déconnecter</button>
-                </label>
-            </form>
+            <a href="{{ path('admin_home') }}">
+                <button type="button" href="{{ path('admin_home') }}" class="btn button-js admin-btn">Acceder a l'administration</button>
+            </a>
+            <a href="{{ path('app_logout') }}">
+                <button name="deconnection" type="submit" class="btn button-js deconnection">Se déconnecter</button>
+            </a>
         {% else %}
 
-            <form action="{{ path('app_login') }}" method="post" class="connection">
+            <form action="{{ path('app_login') }}" method="post" class="connection form-group">
                 <label for="adresse_email">
                     <span>Email</span>
-                    <input type="text" name="_username" placeholder="Adresse email ..." id="adresse_email">
+                    <input type="text" name="_username" placeholder="Adresse email ..." id="adresse_email" class="form-control">
                 </label>
                 <label for="mot_de_passe">
                     <span>Mot de passe</span>
-                    <input type="text" name="_password" id="mot_de_passe" placeholder="Mot de passe ...">
+                    <input type="text" name="_password" id="mot_de_passe" placeholder="Mot de passe ..." class="form-control">
                 </label>
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                <button type="submit" style="background-color: transparent; border:none; cursor: pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <button type="submit" style="background-color: transparent; border:none; cursor: pointer;margin-top: 20px">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24">
                         <path d="M12 4v-4l12 12-12 12v-4h-12v-16z" fill="white"/>
                     </svg>
                 </button>
             </form>
         {% endif %}
+        <h1>Une vie, des voyages</h1>
     </div>
-    <h1>Une vie, des voyages</h1>
+
 </header>

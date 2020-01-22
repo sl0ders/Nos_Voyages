@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/")
  */
-class PaysController extends AbstractController
+class ProfilePaysController extends AbstractController
 {
     /**
      * @Route("/{name}/index", name="pays_index", methods={"GET"})

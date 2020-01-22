@@ -4,6 +4,7 @@
   border-radius: 5px;
   padding: 5px;
   font-size: 1.5em;
+
   &:hover {
     box-shadow: #0c5460 5px 0 20px;
   }
@@ -32,24 +33,57 @@ header {
     @media screen and (max-width: 570px) {
       display: none;
     }
+  }
 
-    span {
-      color: white;
+  .deconnection {
+    border: none;
+    position: absolute;
+    background: darkred;
+    color: white;
+    font-size: 1.1em;
+    top: 10px;
+    right: 20px;
+
+    &:hover {
+      box-shadow: darkred 5px 0 20px;
+    }
+
+    @media screen and (max-width: 570px) {
+      display: none;
     }
   }
 
-  .banner {
-    width: 100%;
-    min-height: 260px;
-    background-image: url(../img/banner.jpg.png);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background-size: 100% 260px;
-    background-repeat: no-repeat;
-    @media screen and (max-width: 1300px) {
-      background-size: 100% 150px;
-      min-height: 150px;
+  .admin-btn {
+    position: absolute;
+    top: 10px;
+    right: 160px;
+    background: #0c5460;
+    color: #FFFFFF;
+    font-size: 1.1em;
+    border: none;
+    @media screen and (max-width: 570px) {
+      display: none;
     }
+  }
+
+  span {
+    color: white;
+  }
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  background-image: url(../img/banner.jpg.png);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-size: 100% 260px;
+  background-repeat: no-repeat;
+  @media screen and (max-width: 1300px) {
+    background-size: 100% 150px;
+    min-height: 150px;
+
   }
 
   h1 {
@@ -127,6 +161,58 @@ header {
   text-shadow: #2b3664 5px 0 20px;
   background-color: rgba(255, 255, 255, 0.6);
 
+  .admin-home {
+    text-align: center;
+    height: 300px;
+    opacity: 0.7;
+
+    a {
+      text-decoration: none;
+      color: #1b1e21;
+      h3 {
+        text-align: center;
+        margin: 20px;
+      }
+
+    }
+
+    .case-country {
+      border: 2px transparent solid;
+      background-color: rgba(70, 186, 250, 0.5);
+
+      &:hover {
+        box-shadow: rgba(70, 186, 250, 0.5) 5px 0 20px;
+      }
+    }
+
+    .case-city {
+      border: 2px transparent solid;
+      background: rgba(250, 121, 94, 0.5);
+
+      &:hover {
+        box-shadow: rgba(250, 121, 94, 0.5) 5px 0 20px;
+      }
+    }
+
+    .case-picture {
+      border: 2px transparent solid;
+      background: rgba(114, 111, 250, 0.5);
+
+      &:hover {
+        box-shadow: rgba(114, 111, 250, 0.5) 10px 0 30px;
+      }
+    }
+
+    .case-user {
+      border: 2px transparent solid;
+      background: rgba(109, 250, 129, 0.5);
+
+      &:hover {
+        box-shadow: rgba(109, 250, 129, 0.8) 10px 0 30px;
+      }
+    }
+  }
+
   #mapid {
     height: 500px;
     width: 700px;
@@ -189,13 +275,83 @@ header {
         }
 
         &.Strasbourg {
-          top: 35%;
+          top: 32%;
           right: 5%;
         }
 
         &.Marseille {
           top: 88%;
-          right: 25%;;
+          right: 25%;
+        }
+
+        &.Annecy {
+          top: 58%;
+          right: 15%;;
+        }
+
+        &.Bayonne {
+          top: 92%;
+          left: 25%;;
+        }
+
+        &.Biarritz {
+          top: 88%;
+          left: 20%;
+        }
+
+        &.Collioure {
+          top: 98%;
+          right: 30%;;
+        }
+
+        &.Dijon {
+          top: 52%;
+          right: 28%;;
+        }
+
+        &.Colmar {
+          top: 36%;
+          right: 5%;
+        }
+
+        &.Hyeres {
+          top: 89%;
+          right: 15%;
+        }
+
+        &.Kaysersberg {
+          top: 35%;
+          right: 14%;
+        }
+
+        &.Riquewihr {
+          top: 38.5%;
+          right: 14%;
+        }
+
+        &.Paris {
+          top: 42%;
+          right: 39%;
+        }
+
+        &.Mulhouse {
+          top: 52%;
+          right: 12%;
+        }
+
+        &.Lyon {
+          top: 64%;
+          right: 25%;
+        }
+
+        &.Lourde {
+          top: 93%;
+          left: 38%;
+        }
+
+        &.Lausanne {
+          top: 55%;
+          right: 14%;
         }
       }
     }
@@ -211,7 +367,7 @@ header {
     a {
       position: relative;
 
-      img {
+      img, div {
         display: block;
         width: 100%;
       }
@@ -220,7 +376,6 @@ header {
         font-family: "Goudy Old Style", serif;
         color: #1b1e21;
         position: absolute;
-
         background: rgba(255, 255, 255, .8);
         padding: 7px 15px;
         border-radius: 3px;
@@ -230,7 +385,7 @@ header {
         opacity: 0;
         transition-property: opacity; /* Active la transition sur background-color */
         transition-duration: 0.3s; /* La transition dure 1s */
-        bottom: 90%;
+        top: 50%;
         right: -40%;
 
         h3 {
@@ -242,14 +397,15 @@ header {
         &::after {
           position: absolute;
           content: "";
-          top: 100%;
+          bottom: 100%;
           left: 10%;
           border-left: 20px solid transparent;
           border-right: 20px solid transparent;
-          border-top: 20px solid rgba(255, 255, 255, .8);
+          border-bottom: 20px solid rgba(255, 255, 255, .8);
 
         }
       }
+
       &:hover {
         .bubble-text {
           opacity: 1;

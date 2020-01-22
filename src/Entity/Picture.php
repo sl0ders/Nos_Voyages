@@ -5,9 +5,13 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PictureRepository")
+ * @Vich\Uploadable
  */
 class Picture
 {
@@ -22,6 +26,38 @@ class Picture
      * @ORM\Column(type="string", length=255)
      */
     private $title;
+
+    /**
+     * @var File
+     * @Vich\UploadableField(mapping="picture_image", fileNameProperty="filename")
+     *
+     * @var File|null
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     */
+    private $filename;
+
+    /**
+     * @return string|null
+     */
+    public function getFilename(): ?string
+    {
+        return $this->filename;
+    }
+
+    /**
+     * @param string|null $filename
+     * @return Picture
+     */
+    public function setFilename(?string $filename): Picture
+    {
+        $this->filename = $filename;
+        return $this;
+    }
 
     /**
      * @ORM\Column(type="text")
@@ -199,6 +235,24 @@ class Picture
     {
         $this->localisation = $localisation;
 
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param mixed $imageFile
+     * @return Picture
+     */
+    public function setImageFile($imageFile)
+    {
+        $this->imageFile = $imageFile;
         return $this;
     }
 }

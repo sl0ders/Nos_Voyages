@@ -1,0 +1,10 @@
+{{ form_start(form, {'action' : path('admin_picture_new')}) }}
+{{ form_row(form.title,{'label': 'Titre' }) }}
+{{ form_row(form.author,{'label': 'Auteur' }) }}
+{{ form_row(form.dayOfTaking,{'label': 'Jour de prise' }) }}
+{{ form_row(form.pays,{'label': 'Pays' }) }}
+{{ form_row(form.city,{'label': 'Ville' }) }}
+{{ form_row(form.imageFile) }}
+{{ form_row(form.description,{'label': 'Description' }) }}
+<button class="btn">{{ button_label|default('Créer') }}</button>
+{{ form_end(form) }}

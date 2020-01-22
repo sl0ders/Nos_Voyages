@@ -7,20 +7,12 @@
 
     <table class="table">
         <tbody>
-        <tr>
-            <th>Pays</th>
-            <td>{{ picture.pays | capitalize}}</td>
-        </tr>
-        <tr>
-            <th>Ville</th>
-            <td>{{ picture.city }}</td>
-        </tr>
             <tr>
                 <th>Id</th>
                 <td>{{ picture.id }}</td>
             </tr>
             <tr>
-                <th>Titre de la photo</th>
+                <th>Name</th>
                 <td>{{ picture.title }}</td>
             </tr>
             <tr>
@@ -28,20 +20,19 @@
                 <td>{{ picture.description }}</td>
             </tr>
             <tr>
-                <th>Jour de prise</th>
+                <th>Day_of_taking</th>
                 <td>{{ picture.dayOfTaking }}</td>
             </tr>
             <tr>
-                <th>Auteur de la photo</th>
-                <td>{{ picture.author }}</td>
+                <th>Link</th>
+                <td>{{ picture.link }}</td>
             </tr>
-
         </tbody>
     </table>
 
-    <a href="{{ path('admin_picture_index') }}">back to list</a>
+    <a href="{{ path('admin_country_index') }}">back to list</a>
 
-    <a href="{{ path('admin_picture_edit', {'id': picture.id}) }}">edit</a>
+    <a href="{{ path('admin_country_edit', {'id': picture.id}) }}">edit</a>
 
-    {{ include('Admin/picture/_delete_form.html.twig') }}
+    {{ include('Admin/country/_delete_form.html.twig') }}
 {% endblock %}

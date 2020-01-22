@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Picture index{% endblock %}
+
+{% block body %}
+    <h1>Picture index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Images</th>
+                <th>Titres</th>
+                <th>Description</th>
+                <th>Jour de la prise</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for picture in pictures %}
+            <tr>
+                <td>{{ picture.id }}</td>
+                <td>
+                    <a href="../../img/country/{{ picture.link }}"><img src="../../{{ picture.link }}" alt="{{ picture.title }}" width="250"
+                                      height="250">
+                    </a>
+                </td>
+                <td>{{ picture.title }}</td>
+                <td>{{ picture.description }}</td>
+                <td>{{ picture.dayOfTaking }}</td>
+                <td>
+                    <a href="{{ path('admin_country_show', {'id': picture.id}) }}">show</a>
+                    <a href="{{ path('admin_country_edit', {'id': picture.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_country_new') }}">Create new</a>
+{% endblock %}
