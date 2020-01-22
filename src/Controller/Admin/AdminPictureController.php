@@ -6,10 +6,12 @@ use App\Entity\Picture;
 use App\Form\PictureEditType;
 use App\Form\PictureNewType;
 use App\Repository\PictureRepository;
+use Liip\ImagineBundle\Imagine\Cache\CacheManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 /**
  * @Route("/admin/picture")
@@ -70,6 +72,8 @@ class AdminPictureController extends AbstractController
      * @Route("/{id}/edit", name="admin_picture_edit", methods={"GET","POST"})
      * @param Request $request
      * @param Picture $picture
+     * @param CacheManager $cacheManager
+     * @param UploaderHelper $helper
      * @return Response
      */
     public function edit(Request $request, Picture $picture): Response
