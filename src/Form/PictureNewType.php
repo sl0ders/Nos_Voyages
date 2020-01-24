@@ -17,7 +17,7 @@ class PictureNewType extends AbstractType
             ->add('description')
             ->add('author')
             ->add('dayOfTaking')
-            ->add('pays')
+            ->add('country')
             ->add('city')
             ->add('imageFile', FileType::class
                 , ['required'  =>false]);

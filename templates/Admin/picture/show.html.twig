@@ -3,45 +3,74 @@
 {% block title %}Picture{% endblock %}
 
 {% block body %}
-    <h1>Picture</h1>
+    <div class="container">
+        <div class="d-flex justify-content-center flex-column">
+            <h2 class="h2 text-center">"{{ picture.title }}"</h2>
+            <a data-target="{{ path('admin_picture_edit', {'id': picture.id}) }}" data-tooltip="voir"
+               class="font-weight-bold tooltipped modal-trigger btn right-align"
+               href="#modal1">
+                <img src="{{ asset('img/arrowx.png') }}" alt="">
+                Modifier l'image
+            </a>
+            <div class="row">
+                <div class="col-md-8">
+                    <a class="text-center"
+                       href="{{ vich_uploader_asset(picture, 'imageFile')|imagine_filter('thumb') }}">
+                        <img src="{{ vich_uploader_asset(picture, 'imageFile') }}" width="100%"
+                             alt="{{ picture.title }}">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-unstyled mt-5">
+                        <h3>Détail de la photo</h3>
+                        <li>Titre de la photo : {{ picture.title }}</li>
+                        <li>Jour de prise de la photo : {{ exif.DateTimeOriginal | date('d/m/Y H:i:s') }}</li>
+                        <li>Lieu de prise : {{ picture.country }} à {{ picture.city }}</li>
+                        <li>Coordonées GPS : {{ picture.localisation }}</li>
+                        <li>Type : {{ exif.MimeType }}</li>
+                        <li>Photo prise par : {{ picture.author }}</li>
+                        <li>Taille : {{ exif.ExifImageLength }} x {{ exif.ExifImageWidth }}</li>
+                        <br>
+                        <li class="border p-2">Description : {{ picture.description }}</li>
+                        {{ dump(exif) }}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-wrap">
+        {{ include('Admin/picture/_delete_form.html.twig') }}
+        <a href="{{ path('admin_picture_index') }}">
+            back to list
+        </a>
+    </div>
 
-    <table class="table">
-        <tbody>
-        <tr>
-            <th>Pays</th>
-            <td>{{ picture.pays | capitalize}}</td>
-        </tr>
-        <tr>
-            <th>Ville</th>
-            <td>{{ picture.city }}</td>
-        </tr>
-            <tr>
-                <th>Id</th>
-                <td>{{ picture.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre de la photo</th>
-                <td>{{ picture.title }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ picture.description }}</td>
-            </tr>
-            <tr>
-                <th>Jour de prise</th>
-                <td>{{ picture.dayOfTaking }}</td>
-            </tr>
-            <tr>
-                <th>Auteur de la photo</th>
-                <td>{{ picture.author }}</td>
-            </tr>
 
-        </tbody>
-    </table>
+    <div id="modal1" class="modal">
+        <div class="container">
+            <div class="modal-content">
 
-    <a href="{{ path('admin_picture_index') }}">back to list</a>
-
-    <a href="{{ path('admin_picture_edit', {'id': picture.id}) }}">edit</a>
-
-    {{ include('Admin/picture/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+<script>
+    $(document).ready(function () {
+        //On écoute le "click" sur le bouton ayant la classe "modal-trigger"
+        $('.modal-trigger').click(function () {
+            //On initialise les modales materialize
+            $('.modal').modal();
+            //On récupère l'url depuis la propriété "Data-target" de la balise html a
+            url = $(this).attr('data-target');
+            //on fait un appel ajax vers l'action symfony qui nous renvoie la vue
+            $.get(url, function (data) {
+                //on injecte le html dans la modale
+                $('.modal-content').html(data);
+                //on ouvre la modale
+                $('#modal1').modal();
+            });
+        })
+    });
+</script>
 {% endblock %}

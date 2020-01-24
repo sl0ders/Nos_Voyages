@@ -5,13 +5,13 @@
 {% block body %}
     <div class="index">
         <div class="map-index">
-            <h2> {{ pays.name }}</h2>
+            <h2> {{ country.name }}</h2>
             {% for city in cities %}
-                <form action="{{ path('picture_index', {'pays':  city.pays ,'city': city.name |slugify('-', ' ') }) }}" method="get">
+                <form action="{{ path('picture_index', {'country':  city.country ,'city': city.name |slugify('-', ' ') }) }}" method="get">
                     <button type="submit" class="btn button-primary city-name {{ city.name }}"> {{ city.name }}</button>
                 </form>
             {% endfor %}
-            <img src="../../img/{{ pays.map }}" alt="">
+            <img src="../../{{ country.map |capitalize}}" alt="">
         </div>
     </div>
 {% endblock %}

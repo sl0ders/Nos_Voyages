@@ -6,11 +6,10 @@
     <h1>Picture index</h1>
 
     <a data-target="{{ path('admin_picture_new') }}" data-tooltip="voir"
-       class="tooltipped modal-trigger btn right-align"
+       class="font-weight-bold tooltipped modal-trigger btn right-align"
        href="#modal1">
-        <button class="button-primary btn">
+        <img src="{{ asset('img/arrowx.png') }}" alt="">
             Inserer une nouvelle image
-        </button>
     </a>
     <table class="table">
         <thead>
@@ -19,7 +18,7 @@
             <th>Images</th>
             <th>Titres</th>
             <th>Description</th>
-            <th>Pays</th>
+            <th>Country</th>
             <th>City</th>
             <th>Jour de la prise</th>
             <th>Actions</th>
@@ -37,18 +36,16 @@
                 </td>
                 <td>{{ picture.title }}</td>
                 <td>{{ picture.description }}</td>
-                <td>{{ picture.pays }}</td>
+                <td>{{ picture.country }}</td>
                 <td>{{ picture.city }}</td>
                 <td>{{ picture.dayOfTaking }}</td>
-                <td class="d-flex justify-content-center">
-                    <a data-target="{{ path('admin_picture_edit', {'id': picture.id}) }}" data-tooltip="voir"
-                       class="tooltipped modal-trigger btn right-align"
-                       href="#modal1">
-                        <button class="button-primary btn">
-                            Éditer
-                        </button>
-                    </a>
-                    {{ include('Admin/picture/_delete_form.html.twig') }}
+                <td>
+                    <div class="d-flex justify-content-center">
+                        {{ include('admin/picture/_delete_form.html.twig') }}
+                        <a href="{{ path('admin_picture_show', {'id': picture.id}) }}">
+                            <button class="btn button-primary">Détail</button>
+                        </a>
+                    </div>
                 </td>
             </tr>
         {% else %}

@@ -1,10 +1,41 @@
 <div class="col-md-2 part-left">
-    <h2>Nos destinations</h2>
-    {% for singlepays in pays %}
-        <form action="{{ path('pays_index', {'name':  singlepays.name }) }}">
-        <button type="submit" class="btn button-primary">{{ singlepays.name }}</button>
-        </form>
-    {% endfor %}
+    {% if not is_granted("ROLE_ADMIN") %}
+        <h2>Nos destinations</h2>
+        {% for country in countries %}
+            <form action="{{ path('country_index', {'name':  country.name }) }}">
+                <button type="submit" class="btn button-primary">{{ country.name }}</button>
+            </form>
+        {% endfor %}
+    {% endif %}
+    {% if is_granted("ROLE_ADMIN") %}
+        <div class="mt-5">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="{{ path('admin_country_index') }}">
+                        <button type="button" class="btn button-primary">
+                            Gestion des pays
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_city_index') }}">
+                        <button class="btn button-primary"> Gestion des villes
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_picture_index') }}">
+                        <button class="btn button-primary" >Gestion des photos
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_user_index') }}">
+                        <button class="btn button-primary" href="">Gestion des utilisateurs</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    {% endif %}
 </div>
-
 

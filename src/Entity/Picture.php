@@ -87,10 +87,10 @@ class Picture
     private $author;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Pays", inversedBy="picture")
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="picture")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $pays;
+    private $country;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\City", inversedBy="picture")
@@ -203,14 +203,14 @@ class Picture
         return $this;
     }
 
-    public function getPays(): ?Pays
+    public function getCountry(): ?Country
     {
-        return $this->pays;
+        return $this->country;
     }
 
-    public function setPays(?Pays $pays): self
+    public function setCountry(?Country $country): self
     {
-        $this->pays = $pays;
+        $this->country = $country;
 
         return $this;
     }

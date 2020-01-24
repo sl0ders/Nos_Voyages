@@ -6,12 +6,10 @@ use App\Entity\Picture;
 use App\Form\PictureEditType;
 use App\Form\PictureNewType;
 use App\Repository\PictureRepository;
-use Liip\ImagineBundle\Imagine\Cache\CacheManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 /**
  * @Route("/admin/picture")
@@ -20,11 +18,24 @@ class AdminPictureController extends AbstractController
 {
     /**
      * @Route("/", name="admin_picture_index", methods={"GET","POST"})
+     * @param Request $request
      * @param PictureRepository $pictureRepository
      * @return Response
      */
-    public function index(PictureRepository $pictureRepository): Response
+    public function index(Request $request, PictureRepository $pictureRepository): Response
     {
+        $picture = new Picture();
+        $form = $this->createForm(PictureNewType::class, $picture);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($picture);
+            $picture->setLink('img/pictures/'.$picture->getFilename());
+            $entityManager->flush();
+
+            return $this->redirectToRoute('admin_picture_index');
+        }
         return $this->render('Admin/picture/index.html.twig', [
             'pictures' => $pictureRepository->findAll(),
         ]);
@@ -41,16 +52,7 @@ class AdminPictureController extends AbstractController
         $form = $this->createForm(PictureNewType::class, $picture);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($picture);
-            $picture->setLink('img/pictures/'.$picture->getFilename());
-            $entityManager->flush();
-
-            return $this->redirectToRoute('admin_picture_index');
-        }
-
-        return $this->render('Admin/picture/_form_new.html.twig', [
+        return $this->render('admin/picture/new.html.twig', [
             'picture' => $picture,
             'form' => $form->createView(),
         ]);
@@ -58,13 +60,26 @@ class AdminPictureController extends AbstractController
 
     /**
      * @Route("/{id}", name="admin_picture_show", methods={"GET","POST"})
+     * @param Request $request
      * @param Picture $picture
      * @return Response
      */
-    public function show(Picture $picture): Response
+    public function show(Request $request,Picture $picture): Response
     {
+        $form = $this->createForm(PictureEditType::class, $picture);
+        $form->handleRequest($request);
+        $exif = exif_read_data('img/pictures/'.$picture->getFilename());
+        if ($form->isSubmitted() && $form->isValid()) {
+            $picture->setCity($picture->getCity());
+            $picture->setCountry($picture->getCountry());
+            $picture->setLink($picture->getFilename());
+            $picture->setDayOfTaking($picture->getDayOfTaking());
+            $this->getDoctrine()->getManager()->flush();
+            return $this->redirectToRoute('admin_picture_index');
+        }
         return $this->render('Admin/picture/show.html.twig', [
             'picture' => $picture,
+            'exif' => $exif
         ]);
     }
 
@@ -79,16 +94,7 @@ class AdminPictureController extends AbstractController
         $form = $this->createForm(PictureEditType::class, $picture);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $picture->setCity($picture->getCity());
-            $picture->setPays($picture->getPays());
-            $picture->setLink($picture->getFilename());
-            $picture->setDayOfTaking($picture->getDayOfTaking());
-            $this->getDoctrine()->getManager()->flush();
-            return $this->redirectToRoute('admin_picture_index');
-        }
-
-        return $this->render('Admin/picture/_form_edit.html.twig', [
+        return $this->render('admin/picture/edit.html.twig', [
             'picture' => $picture,
             'form' => $form->createView(),
         ]);

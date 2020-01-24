@@ -1,0 +1,21 @@
+{% block body %}
+    <div class="container">
+        <a href="{{ path('admin_picture_index') }}" class="cross"></a>
+        <h2 class="text-center">Modification de la photo {{ picture.title }}</h2>
+        <div class="row">
+            <img id="output" class="mr-5" src="{{ vich_uploader_asset(picture, 'imageFile')|imagine_filter('thumb') }}"
+                 width='500'
+                 alt="">
+            <div class="ml-5">
+                {{ include('admin/picture/_form.html.twig', {'button_label': 'Mettre a jour'}) }}
+            </div>
+        </div>
+    </div>
+    <br>
+    <script>
+        let loadFile = function (event) {
+            let output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
+{% endblock %}

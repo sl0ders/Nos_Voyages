@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\PaysRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\CountryRepository")
  */
-class Pays
+class Country
 {
     /**
      * @ORM\Id()
@@ -24,12 +24,12 @@ class Pays
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Picture", mappedBy="pays", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Picture", mappedBy="country", orphanRemoval=true)
      */
     private $picture;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\City", mappedBy="pays")
+     * @ORM\OneToMany(targetEntity="App\Entity\City", mappedBy="country")
      */
     private $cities;
 
@@ -78,7 +78,7 @@ class Pays
     {
         if (!$this->picture->contains($picture)) {
             $this->picture[] = $picture;
-            $picture->setPays($this);
+            $picture->setCountry($this);
         }
 
         return $this;
@@ -89,8 +89,8 @@ class Pays
         if ($this->picture->contains($picture)) {
             $this->picture->removeElement($picture);
             // set the owning side to null (unless already changed)
-            if ($picture->getPays() === $this) {
-                $picture->setPays(null);
+            if ($picture->getCountry() === $this) {
+                $picture->setCountry(null);
             }
         }
 
@@ -113,7 +113,7 @@ class Pays
     {
         if (!$this->cities->contains($city)) {
             $this->cities[] = $city;
-            $city->setPays($this);
+            $city->setCountry($this);
         }
 
         return $this;
@@ -124,8 +124,8 @@ class Pays
         if ($this->cities->contains($city)) {
             $this->cities->removeElement($city);
             // set the owning side to null (unless already changed)
-            if ($city->getPays() === $this) {
-                $city->setPays(null);
+            if ($city->getCountry() === $this) {
+                $city->setCountry(null);
             }
         }
 
