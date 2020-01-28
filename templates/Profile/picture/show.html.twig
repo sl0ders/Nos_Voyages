@@ -1,11 +1,22 @@
 {% extends 'base.html.twig' %}
-{% block title %}
-
-{% endblock %}
+{% block title %}{% endblock %}
 {% block body %}
-<title>Carte</title>
-<body>
-{{ datetime | date('d/m/Y H:i:s')}}
+    <h1>Détail de la photo</h1>
+    <h3 class="text-center">{{ picture.title }}</h3>
+    <p class="text-left">{{ picture.description }}</p>
+    <div class="row">
+        <img class="col-md-8" src="{{ vich_uploader_asset(picture, 'imageFile') }}" alt="">
+        <div class="col-md-4">
+            <h3 class="text-center">Les commentaires</h3>
+                {% for comments in picture.comments %}
+                    <div class="comment">
+                       <p> {{ comments.content }}</p> <br>
+                           <em>{{ comments.author }}({{ comments.createdAt | date('d/m/Y H:i:s') }})</em>
+                    </div>
+                {% endfor %}
+            {% include('Profile/comment/_form.html.twig') %}
+        </div>
+    </div>
 {% endblock %}
 
 

@@ -2,7 +2,7 @@
     {% if not is_granted("ROLE_ADMIN") %}
         <h2>Nos destinations</h2>
         {% for country in countries %}
-            <form action="{{ path('country_index', {'name':  country.name }) }}">
+            <form action="{{ path('profile_country_index', {'name':  country.name }) }}">
                 <button type="submit" class="btn button-primary">{{ country.name }}</button>
             </form>
         {% endfor %}

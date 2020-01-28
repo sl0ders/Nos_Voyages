@@ -256,4 +256,8 @@ class Picture
         $this->imageFile = $imageFile;
         return $this;
     }
+    public function __toString(): string
+    {
+        return $this->title;
+    }
 }

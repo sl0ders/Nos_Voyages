@@ -1,26 +1,33 @@
 <header>
 
     <div class="banner">
-        {% if app.user %}
+        {% if is_granted('ROLE_ADMIN') %}
             <a href="{{ path('admin_home') }}">
-                <button type="button" href="{{ path('admin_home') }}" class="btn button-primary admin-btn">Acceder a l'administration</button>
+                <button type="button" href="{{ path('admin_home') }}" class="btn button-primary admin-btn">Acceder a
+                    l'administration
+                </button>
             </a>
+        {% endif %}
+            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
             <a href="{{ path('app_logout') }}">
-                <button name="deconnection" type="submit" class="btn button-primary deconnection">Se déconnecter</button>
+                <button name="deconnection" type="submit" class="btn button-primary deconnection">Se déconnecter
+                </button>
             </a>
         {% else %}
-
             <form action="{{ path('app_login') }}" method="post" class="connection form-group">
                 <label for="adresse_email">
                     <span>Email</span>
-                    <input type="text" name="_username" placeholder="Adresse email ..." id="adresse_email" class="form-control">
+                    <input type="text" name="_username" placeholder="Adresse email ..." id="adresse_email"
+                           class="form-control">
                 </label>
                 <label for="mot_de_passe">
                     <span>Mot de passe</span>
-                    <input type="text" name="_password" id="mot_de_passe" placeholder="Mot de passe ..." class="form-control">
+                    <input type="text" name="_password" id="mot_de_passe" placeholder="Mot de passe ..."
+                           class="form-control">
                 </label>
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                <button type="submit" style="background-color: transparent; border:none; cursor: pointer;margin-top: 20px">
+                <button type="submit"
+                        style="background-color: transparent; border:none; cursor: pointer;margin-top: 20px">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24">
                         <path d="M12 4v-4l12 12-12 12v-4h-12v-16z" fill="white"/>
                     </svg>

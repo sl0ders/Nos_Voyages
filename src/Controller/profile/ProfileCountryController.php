@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProfileCountryController extends AbstractController
 {
     /**
-     * @Route("/{name}/index", name="country_index", methods={"GET"})
+     * @Route("/{name}/index", name="profile_country_index", methods={"GET"})
      * @param CityRepository $cityRepository
      * @param Country $country
      * @param CountryRepository $countryRepository

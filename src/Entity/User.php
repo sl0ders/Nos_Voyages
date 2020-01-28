@@ -6,10 +6,13 @@ use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity("email", message="Cet addresse email est deja prise, veuillez en choisir une autre")
  */
 class User implements UserInterface
 {
@@ -22,6 +25,8 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank(message="Cet encard ne peut etre vide")
+     * @Assert\Email(message="Veuillez entrer une adresse email au bon format")
      */
     private $email;
 
@@ -33,16 +38,20 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Cet encard ne peut etre vide")
+     * @Assert\Length(max="10",min="5", maxMessage="Votre mot de passe doit contenir entre 4 et 10 lettres ou chiffres", minMessage="Votre mot de passe doit contenir entre 4 et 10 lettres ou chiffres"))
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Cet encard ne peut etre vide")
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Cet encard ne peut etre vide")
      */
     private $lastname;
 
@@ -91,7 +100,7 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->email;
+        return (string)$this->email;
     }
 
     /**
@@ -101,7 +110,7 @@ class User implements UserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = '';
+        $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }
@@ -118,7 +127,7 @@ class User implements UserInterface
      */
     public function getPassword(): string
     {
-        return (string) $this->password;
+        return (string)$this->password;
     }
 
     public function setPassword(string $password): self
@@ -245,6 +254,6 @@ class User implements UserInterface
 
     public function __toString(): string
     {
-        return $this->getFirstname().' '.$this->getLastname();
+        return $this->getFirstname() . ' ' . $this->getLastname();
     }
 }

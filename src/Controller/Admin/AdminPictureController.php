@@ -27,11 +27,11 @@ class AdminPictureController extends AbstractController
         $picture = new Picture();
         $form = $this->createForm(PictureNewType::class, $picture);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
+            $picture->setFilename('img/pictures/'.$picture->getTitle());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($picture);
-            $picture->setLink('img/pictures/'.$picture->getFilename());
+            $picture->setLink('img/pictures/' . $picture->getFilename());
             $entityManager->flush();
 
             return $this->redirectToRoute('admin_picture_index');
@@ -64,11 +64,11 @@ class AdminPictureController extends AbstractController
      * @param Picture $picture
      * @return Response
      */
-    public function show(Request $request,Picture $picture): Response
+    public function show(Request $request, Picture $picture): Response
     {
         $form = $this->createForm(PictureEditType::class, $picture);
         $form->handleRequest($request);
-        $exif = exif_read_data('img/pictures/'.$picture->getFilename());
+        $exif = exif_read_data('img/pictures/' . $picture->getFilename());
         if ($form->isSubmitted() && $form->isValid()) {
             $picture->setCity($picture->getCity());
             $picture->setCountry($picture->getCountry());
@@ -108,7 +108,7 @@ class AdminPictureController extends AbstractController
      */
     public function delete(Request $request, Picture $picture): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$picture->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $picture->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($picture);
             $entityManager->flush();

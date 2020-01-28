@@ -172,13 +172,19 @@ header span {
 }
 
 .part-center {
-  height: 1800px;
+  height: 100%;
   font-weight: 900;
   text-shadow: #2b3664 5px 0 20px;
   background-color: rgba(255, 255, 255, 0.6);
 }
+.part-center .comment {
+  border: white 2px solid;
+  box-shadow: white 8px 0 20px;
+  padding: 20px;
+  margin: 20px;
+}
 .part-center .modal {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .part-center .modal .modal-content {
   background-color: rgba(178, 212, 238, 0.9);

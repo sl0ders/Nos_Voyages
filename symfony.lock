@@ -117,6 +117,9 @@
     "fzaninotto/faker": {
         "version": "v1.9.1"
     },
+    "helios-ag/fm-tinymce-bundle": {
+        "version": "1.0.1"
+    },
     "imagine/imagine": {
         "version": "1.2.3"
     },
@@ -550,6 +553,9 @@
     },
     "symfony/yaml": {
         "version": "v4.3.9"
+    },
+    "tinymce/tinymce": {
+        "version": "4.9.7"
     },
     "twig/twig": {
         "version": "v2.12.3"

@@ -21,6 +21,7 @@
             <th>Country</th>
             <th>City</th>
             <th>Jour de la prise</th>
+            <th>Nombre de commentaire</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -39,10 +40,11 @@
                 <td>{{ picture.country }}</td>
                 <td>{{ picture.city }}</td>
                 <td>{{ picture.dayOfTaking }}</td>
+                <td>{{ picture.comments | length }}</td>
                 <td>
                     <div class="d-flex justify-content-center">
                         {{ include('admin/picture/_delete_form.html.twig') }}
-                        <a href="{{ path('admin_picture_show', {'id': picture.id}) }}">
+                        <a class="btn btn-sm" href="{{ path('admin_picture_show', {'id': picture.id}) }}">
                             <button class="btn button-primary">Détail</button>
                         </a>
                     </div>

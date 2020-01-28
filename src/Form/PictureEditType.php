@@ -8,7 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PictureNewType extends AbstractType
+class PictureEditType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -16,9 +16,6 @@ class PictureNewType extends AbstractType
             ->add('title')
             ->add('description')
             ->add('author')
-            ->add('dayOfTaking')
-            ->add('country')
-            ->add('city')
             ->add('imageFile', FileType::class, [
                 'required' => false
             ]);
