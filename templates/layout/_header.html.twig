@@ -1,6 +1,8 @@
 <header>
-
     <div class="banner">
+        <a href="{{ path('homepage') }}">
+            <img style="opacity:0.9" src="{{ asset('img/home.png') }}" alt="">
+        </a>
         {% if is_granted('ROLE_ADMIN') %}
             <a href="{{ path('admin_home') }}">
                 <button type="button" href="{{ path('admin_home') }}" class="btn button-primary admin-btn">Acceder a
@@ -14,6 +16,7 @@
                 </button>
             </a>
         {% else %}
+
             <form action="{{ path('app_login') }}" method="post" class="connection form-group">
                 <label for="adresse_email">
                     <span>Email</span>

@@ -12,11 +12,14 @@
     <br>
     <div class="news">
         <h3 class="text-center">Les news</h3>
-        <div class="body">
-            <h4>Collioure<span> (Pays Catalans)</span></h4>
-            <p>De nouvelles photos ont etait ajoutées dans la section EST de la france.<br>
-                Un petit sejour du coté de collioure dans les pyrénées oriental mon permis de prendre des
-                clichés magnifique rien que pour vous.</p>
-        </div>
+        {% for new in news %}
+            <a href="{{ path('profile_country_index', {'name': new.city.country}) }}">
+                <div class="body border">
+                    <h4>{{ new.title }} <em>{{ new.createdAt | date('d/m/Y H:i:s') }}</em></h4>
+                    <p>{{ new.content }}</p>
+                </div>
+            </a>
+        {% endfor %}
+
     </div>
 </div>

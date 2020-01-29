@@ -36,6 +36,11 @@ class Comment
      */
     private $picture;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $enabled;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -92,5 +97,17 @@ class Comment
     public function __toString(): string
     {
         return $this->id;
+    }
+
+    public function getEnabled(): ?bool
+    {
+        return $this->enabled;
+    }
+
+    public function setEnabled(bool $enabled): self
+    {
+        $this->enabled = $enabled;
+
+        return $this;
     }
 }

@@ -61,7 +61,7 @@ class Picture
     }
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", length=255, nullable=true)
      */
     private $description;
 

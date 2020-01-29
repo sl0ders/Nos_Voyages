@@ -9,6 +9,28 @@
     box-shadow: #0c5460 5px 0 20px;
   }
 }
+.button-sm{
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+.border {
+  border: black 2px solid;
+  box-shadow: #ffffff 8px 0 20px;
+  padding: 20px;
+  margin: 20px;
+
+  &.admin-city {
+    &:hover{
+      box-shadow: black 8px 0 20px;
+    }
+  }
+
+  &.body {
+    box-shadow: black 8px 0 20px;
+  }
+}
 
 .button-danger {
   border: #da5751 1px solid;
@@ -83,7 +105,7 @@ header {
     position: absolute;
     top: 10px;
     right: 160px;
-    background: #0c5460;
+    background: #6d8e68;
     color: #FFFFFF;
     font-size: 1.1em;
     border: none;
@@ -183,18 +205,14 @@ header {
 
 .part-center {
   height: 100%;
+  padding-bottom: 250px;
   font-weight: 900;
   text-shadow: #2b3664 5px 0 20px;
   background-color: rgba(255, 255, 255, 0.6);
 
-  .comment{
-    border: white 2px solid;
-    box-shadow: white 8px 0 20px;
-    padding: 20px;
-    margin: 20px;
-  }
   .modal {
     margin-top: 5%;
+
     .modal-content {
       background-color: rgba(#b2d4ee, .9);
       font-family: "Goudy Old Style", serif;
@@ -211,7 +229,7 @@ header {
         padding: 10px;
 
         .cross {
-          position:absolute;
+          position: absolute;
           right: 10px;
           top: 10px;
           z-index: 25;
@@ -512,9 +530,5 @@ header {
         font-style: italic;
       }
     }
-
-    border: white 2px solid;
-    box-shadow: white 8px 0 20px;
-    padding: 20px;
   }
 }

@@ -29,7 +29,7 @@
         </div>
 
         {% block sidebar_right %}
-            {% include('layout/_sidebar_right.html.twig') %}
+            {{ render(controller('App\\Controller\\LayoutBundleController::rightMenuAction')) }}
         {% endblock %}
 
     </div>

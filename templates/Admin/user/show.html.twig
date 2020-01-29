@@ -34,9 +34,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_user_index') }}">back to list</a>
+    <a href="{{ path('admin_user_index') }}"><img src="{{ asset('img/arrowx.png') }}" style="transform: rotate(180deg)" alt="">Revenir a l'index de gestion des utilisateurs</a>
 
-    <a href="{{ path('admin_user_edit', {'id': user.id}) }}">edit</a>
-
-    {{ include('user/_delete_form.html.twig') }}
+    <div class="text-right"> {{ include('Admin/user/_delete_form.html.twig') }}</div>
 {% endblock %}

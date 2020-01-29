@@ -9,11 +9,11 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Email</th>
-                <th>Roles</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Created_at</th>
+                <th>Adresse email</th>
+                <th>Role</th>
+                <th>Prénom</th>
+                <th>Nom de famille</th>
+                <th>Date de creation de l'utilisateur</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -25,19 +25,20 @@
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                 <td>{{ user.firstname }}</td>
                 <td>{{ user.lastname }}</td>
-                <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ user.createdAt ? user.createdAt|date('d/m/Y H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('admin_user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('admin_user_edit', {'id': user.id}) }}">edit</a>
+                    <a href="{{ path('admin_user_show', {'id': user.id}) }}">
+                        <button class="btn button-sm button-primary">Détail <img src="{{ asset('img/detail.png') }}" alt=""></button></a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">Aucun utilisateur repertorié</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('admin_user_new') }}">Create new</a>
+    <a href="{{ path('admin_user_new') }}">
+        <button class="btn button-sm button-primary">Creation d'un nouvelle utilisateur <img src="{{ asset('img/create.png') }}" alt=""></button></a>
 {% endblock %}

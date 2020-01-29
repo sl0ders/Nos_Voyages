@@ -1,20 +1,26 @@
 {% extends 'base.html.twig' %}
-{% block title %}{% endblock %}
+{% block title %}Détail de la photo{% endblock %}
 {% block body %}
-    <h1>Détail de la photo</h1>
-    <h3 class="text-center">{{ picture.title }}</h3>
+    <h2 class="text-center">{{ picture.title }}</h2>
     <p class="text-left">{{ picture.description }}</p>
     <div class="row">
-        <img class="col-md-8" src="{{ vich_uploader_asset(picture, 'imageFile') }}" alt="">
+        <a class="col-md-8" href="{{ vich_uploader_asset(picture, 'imageFile') }}">
+            <img class="col-md-12" src="{{ vich_uploader_asset(picture, 'imageFile') }}" alt="">
+        </a>
         <div class="col-md-4">
             <h3 class="text-center">Les commentaires</h3>
-                {% for comments in picture.comments %}
-                    <div class="comment">
-                       <p> {{ comments.content }}</p> <br>
-                           <em>{{ comments.author }}({{ comments.createdAt | date('d/m/Y H:i:s') }})</em>
+            {% for comments in picture.comments %}
+                {% if comments.enabled == true %}
+                    <div class="comment border">
+                        <p>{{ comments.content }}</p>
+                        <br>
+                        <em style="text-align: right">{{ comments.author }}({{ comments.createdAt | date('d/m/Y H:i:s') }})</em>
                     </div>
-                {% endfor %}
-            {% include('Profile/comment/_form.html.twig') %}
+                {% endif %}
+            {% endfor %}
+            {% if is_granted('ROLE_USER') %}
+                {% include('Profile/comment/_form.html.twig') %}
+            {% endif %}
         </div>
     </div>
 {% endblock %}

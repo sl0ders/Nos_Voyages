@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block title %}{% endblock %}
+{% block body %}
+    <h1>Liste des news</h1>
+    {% for new in news %}
+         {{ new.title }}
+    {% endfor %}
+{% endblock %}
+
