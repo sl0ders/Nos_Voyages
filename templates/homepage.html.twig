@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block body %}
+    <form action="" class="text-center mt-5 d-flex justify-content-center flex-md-wrap" method="post">
+        <div class="form-group">
+            <h4>Vous recherchez un endroit en particulier ? </h4>
+            <label for="searchplace">
+                <input type="search" width="100" name="search" placeholder="Rechercher" id="searchplace"
+                       class="form-control ">
+            </label>
+            <button class="btn btn-sm button-primary" type="submit">Rechercher</button>
+        </div>
+    </form>
+        <h2>Pourquoi ce site ?</h2>
+        <p>
+            Ce site a pour but de partager avec vous un bout de notre monde. <br>
+            Notre planète est magnifique, surprenante mais la parcourir nécessite de l'argent et du temps. 2 éléments difficilement cumulables !
+            Certaines personnes décident d'attendre leur retraite pour voyager et d'autres se laissent porter par l’envie et les moyens du moment.<br>
+            L’envie de partager avec vous la découverte de pays époustouflants, de cultures si différentes de la notre est la motivation première de ce site, ou « blog de voyages ».
+            Tout d’abord laisser-moi vous montrer à quel point notre pays est magnifique et oui ! Inutile de faire des milliers de km pour croiser la beauté !<br>
+        </p>
+
+        <div class="row text-lg-left m-5">
+            <div class="col-lg-3 col-md-4 col-6 vrac">
+                <a href="#" class="d-block mb-4">
+                    <h3>Le yunnan (chine)</h3>
+                    <img src="{{ asset('img/yunnan1_medium.jpg') }}" alt=""
+                         class="position-absolute post">
+                    <img src="{{ asset('img/yunnan2_medium.jpg') }}" alt=""
+                         class="position-absolute post" style="transform:rotate(7deg);">
+                    <img src="{{ asset('img/yunnan3_medium.jpg') }}" alt=""
+                         class="position-absolute post" style="transform:rotate(14deg);">
+                    <img src="{{ asset('img/yunnan4_medium.jpg') }}" alt=""
+                         class="position-absolute" style="transform:rotate(21deg);">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 vrac">
+                <a href="#" class="d-block mb-4">
+                    <h3>New York (USA)</h3>
+                    <img src="{{ asset('img/newyork1_medium.jpg') }}" alt="" width="200" height="200"
+                         class="position-absolute post">
+                    <img src="{{ asset('img/newyork2_medium.jpg') }}" alt="" width="200" height="200"
+                         class="position-absolute post" style="transform:rotate(7deg)">
+                    <img src="{{ asset('img/newyork3_medium.jpg') }}" alt="" width="200" height="200"
+                         class="position-absolute post" style="transform:rotate(14deg)">
+                    <img src="{{ asset('img/newyork4_medium.jpg') }}" alt="" width="200" height="200"
+                         class="position-absolute" style="transform:rotate(21deg)">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 vrac">
+                <a href="#" class="d-block mb-4">
+                    <h3>Bali (Indonésie)</h3>
+                    <img src="{{asset('img/bali1_medium.jpg')}}" alt="" width="200" height="200"
+                         class="position-absolute post">
+                    <img src="{{asset('img/bali2_medium.jpg')}}" alt="" width="200" height="200"
+                         class="position-absolute post" style="transform:rotate(7deg)">
+                    <img src="{{asset('img/bali3_medium.jpg')}}" alt="" width="200" height="200"
+                         class="position-absolute post" style="transform:rotate(14deg)">
+                    <img src="{{asset('img/bali4_medium.jpg')}}" alt="" width="200" height="200"
+                         class="position-absolute" style="transform:rotate(21deg)">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 vrac">
+                <a href="#" class="d-block mb-4">
+                    <h3>Londres</h3>
+                    <img src="{{asset('img/londre1_medium.jpg')}}" alt="" width="200" height="200"
+                         class="position-absolute post">
+                    <img src="{{asset('img/londre2_medium.jpg')}}" alt="" width="200" height="200"
+                         class="position-absolute post" style="transform:rotate(7deg)">
+                    <img src="{{asset('img/londre3_medium.jpg')}}" alt="" width="200" height="200"
+                         class="position-absolute post" style="transform:rotate(14deg)">
+                    <img src="{{asset('img/londre4_medium.jpg')}}" alt="" width="200" height="200"
+                         class="position-absolute" style="transform:rotate(21deg)">
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 vrac">
+                <a href="#" class="d-block mb-4">
+                    <h3>Australie</h3>
+                    <img src="{{asset('img/australie1_medium.jpg')}}" alt=""
+                         class="position-absolute post">
+                    <img src="{{asset('img/australie2_medium.jpg')}}" alt=""
+                         class="position-absolute post" style="transform:rotate(7deg);">
+                    <img src="{{asset('img/australie3_medium.jpg')}}" alt=""
+                         class="position-absolute post" style="transform:rotate(14deg);">
+                    <img src="{{asset('img/australie4_medium.jpg')}}" alt=""
+                         class="position-absolute" style="transform:rotate(21deg);">
+                </a>
+            </div>
+        </div>
+{% endblock %}

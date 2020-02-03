@@ -1,7 +1,7 @@
 <header>
     <div class="banner">
         <a href="{{ path('homepage') }}">
-            <img style="opacity:0.9" src="{{ asset('img/home.png') }}" alt="">
+            <img style="opacity:0.9" src="{{ asset('img/home.png') }}" width="3%" alt="">
         </a>
         {% if is_granted('ROLE_ADMIN') %}
             <a href="{{ path('admin_home') }}">

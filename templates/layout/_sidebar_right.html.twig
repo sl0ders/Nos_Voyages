@@ -1,25 +1,12 @@
-<div class="col-2 part-right">
-    <form action="" class="text-center mt-5 d-flex justify-content-center flex-md-wrap">
-        <div class="form-group">
-            <h4>Vous recherchez un endroit en particulier ? </h4>
-            <label for="searchplace">
-                <input type="submit" width="100" placeholder="Rechercher" id="searchplace"
-                       class="form-control ">
-            </label>
-            <button class="btn button-primary" type="submit">Rechercher</button>
-        </div>
-    </form>
-    <br>
     <div class="news">
-        <h3 class="text-center">Les news</h3>
+        <h3 class="text-center">
+            <img src="{{ asset('img/news_logo.png') }}" width="40%" alt="">
+        </h3>
         {% for new in news %}
-            <a href="{{ path('profile_country_index', {'name': new.city.country}) }}">
                 <div class="body border">
-                    <h4>{{ new.title }} <em>{{ new.createdAt | date('d/m/Y H:i:s') }}</em></h4>
+                    <a href="{{ path('profile_country_index', {'name': new.city.country}) }}">
+                    <h4>{{ new.title }} <em>{{ new.createdAt | date('d/m/Y H:i:s') }}</em></h4></a>
                     <p>{{ new.content }}</p>
                 </div>
-            </a>
         {% endfor %}
-
     </div>
-</div>

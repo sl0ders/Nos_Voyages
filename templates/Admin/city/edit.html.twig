@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="col-md-10 m-auto pt-5">
+        <h2 class="text-center">Éditer la ville</h2>
+        <div class="container">
+            <a href="{{ path('admin_city_index') }}" class="cross"></a>
+            <div class="pl-5 pr-5 pb-5">
+                {{ include('admin/city/_form.html.twig', {'button_label': 'Mettre a jour'}) }}
+                <br>
+                <div class="text-right">  {{ include('admin/city/_delete_form.html.twig') }}</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

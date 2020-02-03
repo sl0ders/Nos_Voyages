@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('admin_city_delete', {'id': city.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce pays ? Toute les photos associée seront egalement supprimée.');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ city.id) }}">
+        <button class="btn-sm btn button-danger mt-1">Supprimer</button>
+</form>

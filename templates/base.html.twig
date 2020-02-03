@@ -10,10 +10,8 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/lightbox.css') }}">
     <script src="{{ asset('js/lightbox.js') }}" type="module" defer></script>
-    <link rel="stylesheet" href="{{ asset('sass/style.css') }}">
-
-
-    {% block stylesheets %}{% endblock %}
+    <link rel="stylesheet" href="{{ asset('sass/app.css') }}">
+    {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
 </head>
 <body>
 {% block header %}
@@ -22,16 +20,20 @@
 
 <main class="container-fluid">
     <div class="row">
+        <div class="part-left col-md-2">
         {{ render(controller('App\\Controller\\LayoutBundleController::leftMenuAction')) }}
-        <div class="col-md-8 part-center">
+        </div>
+
+        <div class="part-center col-md-8">
             {% block body %}
             {% endblock %}
         </div>
 
+        <div class="part-right col-md-2">
         {% block sidebar_right %}
             {{ render(controller('App\\Controller\\LayoutBundleController::rightMenuAction')) }}
         {% endblock %}
-
+        </div>
     </div>
 </main>
 
@@ -46,7 +48,7 @@
 <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
-{% block javascripts %}{% endblock %}
+{% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
 <script>
     $('.cross').on('click', () => {
         console.log('close')

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comment index{% endblock %}
+
+{% block body %}
+    <h1>Comment index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Content</th>
+            <th>photo associée</th>
+            <th>Created_at</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for comment in comments %}
+            <tr>
+                <td>{{ comment.id }}</td>
+                <td>{{ comment.content }}</td>
+                <td><a href="{{ path('admin_picture_show', {'id': comment.picture.id}) }}">{{ comment.picture }}</a>
+                </td>
+                <td>{{ comment.createdAt ? comment.createdAt|date('d/m/Y H:i:s') : '' }}</td>
+                <td>
+                    <form class="input-group" action="{{ path('admin_comment_edit', {'id': comment.id}) }}"
+                          method="post">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <input type="checkbox" name="report"
+                                                                 id="reporting" {% if comment.enabled == true %} checked disabled {% endif %} >
+                                {% if comment.enabled == false %}<label for="reporting"></label>
+                                <button class="btn button-warning ml-2" type="submit">validé</button>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </form>
+                    {% include 'Admin/comment/_delete_form.html.twig' %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun commentaire n'a été posté</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,52 +1,67 @@
-<div class="col-md-2 part-left">
     {% if not is_granted("ROLE_ADMIN") %}
         <h2>Nos destinations</h2>
         {% for country in countries %}
             <form action="{{ path('profile_country_index', {'name':  country.name }) }}">
-                <button type="submit" class="btn button-primary">{{ country.name }}</button>
+                <button type="submit" class="p-1 w-50 btn button-primary">{{ country.name }}<img src="../img/{{ country.name }}_logo.png" alt=""></button>
             </form>
         {% endfor %}
     {% endif %}
     {% if is_granted("ROLE_ADMIN") %}
         <div class="mt-5">
+            <h1 class="text-center">
+                Administration
+            </h1>
+            <br>
             <ul class="list-unstyled">
                 <li>
                     <a href="{{ path('admin_country_index') }}">
                         <button type="button" class="btn button-primary">
-                            Gestion des pays
+                            <span class="h5">Gestion des pays</span>
+                            <img src="{{ asset('img/admin_country.png') }}" width="10%" alt="">
                         </button>
                     </a>
                 </li>
                 <li>
                     <a href="{{ path('admin_city_index') }}">
-                        <button class="btn button-primary"> Gestion des villes
+                        <button class="btn button-primary">
+                            <span class="h5">Gestion des villes</span>
+                            <img src="{{ asset('img/admin_city.png') }}" width="10%" alt="">
                         </button>
                     </a>
                 </li>
                 <li>
                     <a href="{{ path('admin_picture_index') }}">
-                        <button class="btn button-primary" >Gestion des photos
+                        <button class="btn button-primary" >
+                            <span class="h5">Gestion des photos</span>
+                            <img src="{{ asset('img/admin_picture.png') }}" width="10%" alt="">
                         </button>
                     </a>
                 </li>
                 <li>
                     <a href="{{ path('admin_comment_index') }}">
-                        <button class="btn button-primary" >Gestion des commentaires
+                        <button class="btn button-primary" >
+                            <span class="h5">Gestion des commentaires</span>
+                            <img src="{{ asset('img/admin_commentaires.png') }}" width="10%" alt="">
                         </button>
                     </a>
                 </li>
                 <li>
                     <a href="{{ path('admin_user_index') }}">
-                        <button class="btn button-primary" href="">Gestion des utilisateurs</button>
+                        <button class="btn button-primary" href="">
+                            <span class="h5">Gestion des utilisateurs</span>
+                            <img src="{{ asset('img/admin_user.png') }}" width="10%" alt="">
+                        </button>
                     </a>
                 </li>
                 <li>
                     <a href="{{ path('admin_news_index') }}">
-                        <button class="btn button-primary" href="">Gestion des news</button>
+                        <button class="btn button-primary" href="">
+                            <span class="h5">Gestion des news</span>
+                            <img src="{{ asset('img/admin_news.png') }}" width="10%" alt="">
+                        </button>
                     </a>
                 </li>
             </ul>
         </div>
     {% endif %}
-</div>
 

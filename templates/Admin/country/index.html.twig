@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des pays{% endblock %}
+
+{% block body %}
+    <h2 class="h1 text-center p-5">Gestion des Lieux</h2>
+    <a data-target="{{ path('admin_country_new') }}" data-tooltip="voir" class="font-weight-bold tooltipped modal-trigger btn right-align" href="#modal1">
+        <button class="btn button-sm button-primary">Ajouter un nouveau pays <img src="{{ asset('img/create.png') }}" alt=""></button>
+    </a>
+    <br>
+    <div class="container">
+        {% for country in countries %}
+            <div class="border admin-city">
+                <h2 class="text-center mt-5">{{ country.name }}</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="../../{{ country.name }}">
+                            <img src="../../{{ country.map }}" alt="{{ country.map }}" class="w-100">
+                        </a>
+                        <div class="action text-center mt-5">
+                            {{ include('admin/country/_delete_form.html.twig') }}
+                            <a class="pt-3" href="{{ path('admin_country_edit', {'id': country.id}) }}">
+                                <button class="btn button-primary">Modifier</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-1">
+                        <h3 class="mb-5 text-center">Liste des villes répertoriées</h3>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <a data-target="{{ path('admin_city_new') }}" data-tooltip="voir"
+                                       class="tooltipped modal-trigger btn right-align"
+                                       href="#modal1">
+                                        <button class="btn button-sm button-primary">Ajouter une nouvelle ville <img src="{{ asset('img/create.png') }}" alt=""></button>
+                                    </a>
+                                    <ul>
+                                        {% for city in country.cities |slice(0,25) %}
+                                            <li>{{ city }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="col-md-5">
+                                    <ul>
+                                        {% for city in country.cities |slice(26,30) %}
+                                            <li>{{ city }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="modal1" class="modal">
+        <div class="container">
+            <div class="modal-content">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+            //On écoute le "click" sur le bouton ayant la classe "modal-trigger"
+            $('.modal-trigger').click(function () {
+                //On initialise les modales materialize
+                $('.modal').modal();
+                //On récupère l'url depuis la propriété "Data-target" de la balise html a
+                url = $(this).attr('data-target');
+                //on fait un appel ajax vers l'action symfony qui nous renvoie la vue
+                $.get(url, function (data) {
+                    //on injecte le html dans la modale
+                    $('.modal-content').html(data);
+                    //on ouvre la modale
+                    $('#modal1').modal();
+                });
+            })
+        });
+    </script>
+{% endblock %}
