@@ -2,7 +2,12 @@
 
 namespace App\Controller\profile;
 
+use App\Data\SearchData;
+use App\Form\SearchType;
+use App\Repository\CityRepository;
+use App\Repository\PictureRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -11,11 +16,17 @@ class ProfileHomeController extends AbstractController
 {
     /**
      * @Route("/", name="homepage")
+     * @param Request $request
+     * @param PictureRepository $pictureRepository
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
-    public function index(AuthenticationUtils $authenticationUtils)
+    public function index(Request $request, pictureRepository $pictureRepository ,AuthenticationUtils $authenticationUtils)
     {
+        $data = new SearchData();
+        $form = $this->createForm(SearchType::class, $data);
+        $form->handleRequest($request);
+        $pictures = $pictureRepository->findSearch($data);
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
@@ -23,7 +34,9 @@ class ProfileHomeController extends AbstractController
 
         return $this->render('homepage.html.twig', [
             'lastUsername' => $lastUsername,
-            '$error' => $error
+            '$error' => $error,
+            'form' => $form->createView(),
+            'pictures' => $pictures
         ]);
     }
 }
