@@ -33,11 +33,6 @@ class PictureRepository extends ServiceEntityRepository
             ->select('c', 'p')
             ->join('p.city', 'c');
 
-        if (!empty($search->q)) {
-            $query = $query
-                ->andWhere('c.name LIKE :q')
-                ->setParameter('q', "%{$search->q}%");
-        }
 
         if(!empty($search->cities)) {
             $query = $query

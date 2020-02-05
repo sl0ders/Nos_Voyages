@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card">
+                <img class="m-auto pt-4 card-img-top" src="{{ asset('img/signup.png') }}" alt="">
+                <div class="card-body">
+                    <h4 class="h2 text-center card-title">s'inscrire</h4>
+                    <p class="card-text">
+                        {% include '_form.html.twig' %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

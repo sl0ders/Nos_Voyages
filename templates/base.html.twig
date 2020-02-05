@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Welcome!{% endblock %}</title>
     <link rel="icon" href="{{ asset('img/favicon.ico') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/lightbox.css') }}">
     <script src="{{ asset('js/lightbox.js') }}" type="module" defer></script>
     {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
@@ -40,12 +37,6 @@
     {% include('layout/_footer.html.twig') %}
 {% endblock %}
 
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="{{ asset('js/Popper.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
 <script>

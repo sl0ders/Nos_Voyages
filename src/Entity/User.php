@@ -33,7 +33,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="json")
      */
-    private $roles = [];
+    private $roles = ["ROLE_USER"];
 
     /**
      * @var string The hashed password
@@ -42,6 +42,12 @@ class User implements UserInterface
      * @Assert\Length(max="10",min="5", maxMessage="Votre mot de passe doit contenir entre 4 et 10 lettres ou chiffres", minMessage="Votre mot de passe doit contenir entre 4 et 10 lettres ou chiffres"))
      */
     private $password;
+
+    /**
+     * @Assert\NotBlank(message="Veuillez confirmer le mot de passe")
+     * @Assert\EqualTo(propertyPath="password", message="le mot de passe doit etre identique a sa confirmation")
+     */
+    private $confirm_password;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -256,5 +262,21 @@ class User implements UserInterface
     public function __toString(): string
     {
         return $this->getFirstname() . ' ' . $this->getLastname();
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getConfirmPassword()
+    {
+        return $this->confirm_password;
+    }
+
+    /**
+     * @param string $confirm_password
+     */
+    public function setConfirmPassword(string $confirm_password): void
+    {
+        $this->confirm_password = $confirm_password;
     }
 }
