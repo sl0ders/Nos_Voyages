@@ -1,48 +1,55 @@
-<header>
-    <div class="banner">
-        <a href="{{ path('homepage') }}">
-            <img style="opacity:0.9" src="{{ asset('img/svg/home.svg') }}" width="2%" alt="">
-        </a>
-        {% if is_granted('ROLE_ADMIN') %}
-            <a href="{{ path('admin_home') }}">
-                <button type="button" href="{{ path('admin_home') }}" class="btn button-primary admin-btn">Acceder a
-                    l'administration
-                </button>
-            </a>
-        {% endif %}
-            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
-            <a href="{{ path('app_logout') }}">
-                <button name="deconnection" type="submit" class="btn button-primary deconnection">Se déconnecter
-                </button>
-            </a>
-        {% else %}
-            <div class="connection w-100">
-                <form action="{{ path('app_login') }}" method="post" class="connection form-group">
-                    <label for="adresse_email">
-                        <span>Email</span>
-                        <input type="text" name="_username" placeholder="Adresse email ..." id="adresse_email"
-                               class="form-control">
-                    </label>
-                    <label for="mot_de_passe">
-                        <span>Mot de passe</span>
-                        <input type="text" name="_password" id="mot_de_passe" placeholder="Mot de passe ..."
-                               class="form-control">
-                    </label>
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                    <button type="submit"
-                            style="background-color: transparent; border:none; cursor: pointer;margin-top: 20px">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24">
-                            <path d="M12 4v-4l12 12-12 12v-4h-12v-16z" fill="white"/>
-                        </svg>
-                    </button>
-                </form>
-                <a href="{{ path('app_signhup') }}">
-                    ou Inscrivez-vous
+<header class="container-fluid">
+    <nav class="navbar navbar-expand-sm">
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+                aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><img src="{{ asset('img/svg/toggle-bar.svg') }}" alt=""></span>
+        </button>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li>
+                <a class="nav-link" href="/">
+                    <img src="{{ asset('img/svg/home.svg') }}" width="30" alt="">
                 </a>
+            </li>
+        </ul>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+
+            <div class="navbar-nav ml-auto mt-2 mt-lg-0">
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a class="nav-link" href="{{ path('admin_home') }}">
+                        <button class="btn btn-primary">Administration</button>
+                    </a>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
+                    <a class="nav-link" href="{{ path('app_logout') }}">
+                        <button class="btn btn-danger">deconnection</button>
+                    </a>
+                {% else %}
+                    <div class="nav-link">
+                        <form action="{{ path('app_login') }}" method="post" class="form-group">
+                            <label for="adresse_email">
+                                <input type="text" name="_username" placeholder="Adresse email ..." id="adresse_email"
+                                       class="form-control">
+                            </label>
+                            <label for="mot_de_passe">
+                                <input type="text" name="_password" id="mot_de_passe" placeholder="Mot de passe ..."
+                                       class="form-control">
+                            </label>
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            <button type="submit"
+                                    style="background-color: transparent; border:none; cursor: pointer;margin-top: 20px">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24">
+                                    <path d="M12 4v-4l12 12-12 12v-4h-12v-16z" fill="white"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                    <a class="nav-link mt-md-3 mt-sm-3" href="{{ path('app_signhup') }}">
+                        <button class="btn btn-success">S'inscrire</button>
+                    </a>
+                {% endif %}
             </div>
-
-        {% endif %}
-        <h1>Une vie, des voyages</h1>
-    </div>
-
+        </div>
+    </nav>
+    <h1 class="text-white text-center">Une vie, des voyages</h1>
 </header>

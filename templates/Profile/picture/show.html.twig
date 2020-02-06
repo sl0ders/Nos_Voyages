@@ -8,29 +8,28 @@
             <img class="col-md-12" src="{{ vich_uploader_asset(picture, 'imageFile') }}" alt="">
         </a>
         <div class="col-md-4">
-            <h3 class="text-center">Les commentaires</h3>
-            {% for comments in picture.comments %}
-                {% if comments.enabled == true %}
-                    <div class="comment border">
-                        <p>{{ comments.content }}</p>
-                        <br>
-                        <em style="text-align: right">{{ comments.author }}
-                            ({{ comments.createdAt | date('d/m/Y H:i:s') }})</em>
-                    </div>
-                {% endif %}
-            {% endfor %}
             {% if is_granted('ROLE_USER') %}
                 {% include('Profile/comment/_form.html.twig') %}
             {% endif %}
-            {% for comment in picture.comments %}
-            <div class="card mt-5">
-                <div class="card-body">
-                    <h5 class="card-title">Posté par {{  comment.author }} le <em style="font-size: 0.6em">{{ comment.createdAt | date('d/m/Y H:i:s') }}</em></h5>
-                    <p class="card-text">
-                        {{ comment.content }}
-                    </p>
+            {% if not app.user %}
+                <div class="text-center">
+                    <img src="{{ asset('img/svg/warning.svg') }}" alt="" width="40">
+                    <h6 class="alert-danger mt-2">
+                        Afin de pouvoir commenter une photo veuillez au prealable vous connecter !
+                    </h6>
                 </div>
-            </div>
+            {% endif %}
+            {% for comment in picture.comments %}
+                {% if comment.enabled == 1  %}
+                    <div class="card mt-5">
+                        <div class="card-body">
+                            <h5 class="card-title">Posté par {{  comment.author }} le <em style="font-size: 0.6em">{{ comment.createdAt | date('d/m/Y H:i:s') }}</em></h5>
+                            <p class="card-text">
+                                {{ comment.content }}
+                            </p>
+                        </div>
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     </div>

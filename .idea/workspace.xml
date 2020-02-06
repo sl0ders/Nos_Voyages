@@ -2,43 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5a2918b-f41f-42d0-9e11-845289521b48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/signUp.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/_form-login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/Popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.bundle.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jQuery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CommentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CommentType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PictureRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PictureRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Profile/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Profile/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Profile/comment/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Profile/comment/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Profile/comment/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Profile/comment/edit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Profile/comment/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Profile/comment/show.html.twig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Profile/picture/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Profile/picture/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layout/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/_header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -360,7 +333,7 @@
       <workItem from="1580801825498" duration="641000" />
       <workItem from="1580830198503" duration="9157000" />
       <workItem from="1580847878788" duration="1825000" />
-      <workItem from="1580894463245" duration="16721000" />
+      <workItem from="1580894463245" duration="24159000" />
     </task>
     <task id="LOCAL-00001" summary="mise en place des entités et de base.html.twig">
       <created>1579288821924</created>
@@ -425,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580912477250</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="mise en place de la partie signUp pour les inscription sur le site + amelioration du design du detail des photo dans la rebrique show">
+      <created>1580946409980</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1580946409980</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,7 +435,8 @@
     <MESSAGE value="finalisation et correction de quelques bug" />
     <MESSAGE value="mise en place de webpack pour praticité de la mise en place" />
     <MESSAGE value="mise en place d'un formulaire de recherche en créant une entité SearchData.php et un formulaire attitré" />
-    <option name="LAST_COMMIT_MESSAGE" value="mise en place d'un formulaire de recherche en créant une entité SearchData.php et un formulaire attitré" />
+    <MESSAGE value="mise en place de la partie signUp pour les inscription sur le site + amelioration du design du detail des photo dans la rebrique show" />
+    <option name="LAST_COMMIT_MESSAGE" value="mise en place de la partie signUp pour les inscription sur le site + amelioration du design du detail des photo dans la rebrique show" />
   </component>
   <component name="WindowStateProjectService">
     <state x="339" y="50" key="#Deployment" timestamp="1579828887364">
@@ -484,24 +465,24 @@
     </state>
     <state x="140" y="40" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579353081853" />
     <state x="0" y="40" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580746968981" />
-    <state x="565" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580944533276">
+    <state x="565" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580946522109">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="565" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580944533276" />
-    <state x="565" y="199" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580894691025">
+    <state x="565" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580946522109" />
+    <state x="565" y="199" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580947703114">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="565" y="199" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579365607377" />
-    <state x="565" y="199" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580894691025" />
+    <state x="565" y="199" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580947703114" />
     <state x="740" y="455" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1580198701066">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="740" y="455" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580198701066" />
-    <state x="-1920" y="0" key="CommitChangelistDialog2" timestamp="1580912476674">
+    <state x="-1920" y="0" key="CommitChangelistDialog2" timestamp="1580946409329">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="474" y="40" key="CommitChangelistDialog2/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579300618428" />
-    <state x="-1920" y="0" key="CommitChangelistDialog2/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580912476674" />
+    <state x="-1920" y="0" key="CommitChangelistDialog2/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580946409329" />
     <state x="92" y="132" width="1736" height="856" key="DiffContextDialog" timestamp="1580912531001">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -516,22 +497,22 @@
     <state x="640" y="199" key="FileChooserDialogImpl/0.40.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1579449690557" />
     <state x="640" y="199" key="FileChooserDialogImpl/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579392002475" />
     <state x="640" y="199" key="FileChooserDialogImpl/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580923386410" />
-    <state width="1859" height="256" key="GridCell.Tab.0.bottom" timestamp="1580944739462">
+    <state width="1859" height="256" key="GridCell.Tab.0.bottom" timestamp="1580953351303">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state width="1859" height="256" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580944739462" />
-    <state width="1859" height="256" key="GridCell.Tab.0.center" timestamp="1580944739462">
+    <state width="1859" height="256" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580953351303" />
+    <state width="1859" height="256" key="GridCell.Tab.0.center" timestamp="1580953351303">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state width="1859" height="256" key="GridCell.Tab.0.center/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580944739462" />
-    <state width="1859" height="256" key="GridCell.Tab.0.left" timestamp="1580944739462">
+    <state width="1859" height="256" key="GridCell.Tab.0.center/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580953351303" />
+    <state width="1859" height="256" key="GridCell.Tab.0.left" timestamp="1580953351303">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state width="1859" height="256" key="GridCell.Tab.0.left/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580944739462" />
-    <state width="1859" height="256" key="GridCell.Tab.0.right" timestamp="1580944739462">
+    <state width="1859" height="256" key="GridCell.Tab.0.left/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580953351303" />
+    <state width="1859" height="256" key="GridCell.Tab.0.right" timestamp="1580953351303">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state width="1859" height="256" key="GridCell.Tab.0.right/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580944739462" />
+    <state width="1859" height="256" key="GridCell.Tab.0.right/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580953351303" />
     <state width="262" height="729" key="HiddenNamespacesPopup" timestamp="1580840236706">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -540,11 +521,11 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="340" y="169" key="IDE.errors.dialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580670152859" />
-    <state x="736" y="270" key="NewPhpClassDialog" timestamp="1580831069865">
+    <state x="736" y="270" key="NewPhpClassDialog" timestamp="1580947664773">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="736" y="270" key="NewPhpClassDialog/0.40.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1579457569063" />
-    <state x="736" y="270" key="NewPhpClassDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580831069865" />
+    <state x="736" y="270" key="NewPhpClassDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580947664773" />
     <state x="754" y="446" key="NewPhpFileDialog" timestamp="1579425891474">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -554,19 +535,19 @@
     </state>
     <state x="251" y="40" key="SettingsEditor/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579343496823" />
     <state x="251" y="40" key="SettingsEditor/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579616484833" />
-    <state x="352" y="138" key="Vcs.Push.Dialog.v2" timestamp="1580912515264">
+    <state x="352" y="138" key="Vcs.Push.Dialog.v2" timestamp="1580946412121">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="352" y="138" key="Vcs.Push.Dialog.v2/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579289178374" />
-    <state x="352" y="138" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580912515264" />
+    <state x="352" y="138" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580946412121" />
     <state x="92" y="132" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1580664670505">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="92" y="132" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580664670505" />
-    <state x="92" y="132" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580944642361">
+    <state x="92" y="132" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580953200060">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="92" y="132" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580944642361" />
+    <state x="92" y="132" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580953200060" />
     <state x="576" y="96" width="1020" height="984" key="find.popup" timestamp="1580751375086">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

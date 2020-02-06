@@ -88,105 +88,17 @@ body, html {
 
 header {
   position: relative;
-  z-index: 1;
-  width: 100%;
-  display: block;
-  min-height: 260px;
-  @media screen and (max-width: 570px) {
-    min-height: 150px;
-  }
-
-  .connection {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    @media screen and (max-width: 570px) {
-      display: none;
-    }
-  }
-
-  .deconnection {
-    border: none;
-    position: absolute;
-    background: darkred;
-    color: white;
-    font-size: 1.1em;
-    top: 10px;
-    right: 20px;
-
-    &:hover {
-      box-shadow: darkred 5px 0 20px;
-    }
-
-    @media screen and (max-width: 570px) {
-      display: none;
-    }
-  }
-
-  .admin-btn {
-    position: absolute;
-    top: 10px;
-    right: 160px;
-    background: #cde7f2;
-    color: #405b66;
-    font-size: 1.1em;
-    border: none;
-    @media screen and (max-width: 570px) {
-      display: none;
-    }
-  }
-
-  span {
-    color: white;
-  }
-}
-
-.banner {
-  position: relative;
   width: 100%;
   min-height: 260px;
   background: linear-gradient(to bottom, #6e7d95, #6a788c 20%, rgba(63, 63, 63, 0.15)),
   center top /cover url('../../public/img/banner.jpg') fixed;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
   background-size: 100% 260px;
-  @media screen and (max-width: 1300px) {
-    background-size: 100% 150px;
-    min-height: 150px;
-  }
-
-  a {
-    img {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      border: white 3px solid;
-      padding: 3px;
-    }
-
-    & :hover {
-      box-shadow: #cde7f2 5px 0 20px;
-    }
-  }
-
   h1 {
-    text-align: center;
-    color: white;
-    filter: brightness(100%);
-    position: absolute;
-    top: 20%;
-    left: 23%;
-    right: 25%;
-    z-index: 10;
-    font-family: "Goudy Old Style", serif;
-    font-size: 6vw;
-
-    @media screen and (max-width: 890px) {
-      top: 30%;
-    }
-    @media screen and (max-width: 570px) {
-      font-size: 8vw;
-      top: 15%;
+    font-size: 5rem;
+    @media screen and (max-width: 760px) {
+     font-size: 4rem;
+    }@media screen and (max-width: 575px) {
+      display: none;
     }
   }
 }
