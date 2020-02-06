@@ -606,6 +606,9 @@
     "tinymce/tinymce": {
         "version": "4.9.7"
     },
+    "twbs/bootstrap": {
+        "version": "v4.0.0"
+    },
     "twig/twig": {
         "version": "v2.12.3"
     },

@@ -2,7 +2,7 @@
         <h2>Nos destinations</h2>
         {% for country in countries %}
             <form action="{{ path('profile_country_index', {'name':  country.name }) }}">
-                <button type="submit" class="p-1 w-50 btn button-primary">{{ country.name }}<img src="../img/{{ country.name }}_logo.png" alt=""></button>
+                <button type="submit" class="p-1 w-50 btn btn-primary">{{ country.name }}<img src="../img/{{ country.name }}_logo.png" alt=""></button>
             </form>
         {% endfor %}
     {% endif %}
@@ -15,7 +15,7 @@
             <ul class="list-unstyled">
                 <li>
                     <a href="{{ path('admin_country_index') }}">
-                        <button type="button" class="btn button-primary">
+                        <button type="button" class="btn btn-primary">
                             <span class="h5">Gestion des pays</span>
                             <img src="{{ asset('img/admin_country.png') }}" width="10%" alt="">
                         </button>
@@ -23,7 +23,7 @@
                 </li>
                 <li>
                     <a href="{{ path('admin_city_index') }}">
-                        <button class="btn button-primary">
+                        <button class="btn btn-primary">
                             <span class="h5">Gestion des villes</span>
                             <img src="{{ asset('img/admin_city.png') }}" width="10%" alt="">
                         </button>
@@ -31,7 +31,7 @@
                 </li>
                 <li>
                     <a href="{{ path('admin_picture_index') }}">
-                        <button class="btn button-primary" >
+                        <button class="btn btn-primary" >
                             <span class="h5">Gestion des photos</span>
                             <img src="{{ asset('img/admin_picture.png') }}" width="10%" alt="">
                         </button>
@@ -39,7 +39,7 @@
                 </li>
                 <li>
                     <a href="{{ path('admin_comment_index') }}">
-                        <button class="btn button-primary" >
+                        <button class="btn btn-primary" >
                             <span class="h5">Gestion des commentaires</span>
                             <img src="{{ asset('img/admin_commentaires.png') }}" width="10%" alt="">
                         </button>
@@ -47,7 +47,7 @@
                 </li>
                 <li>
                     <a href="{{ path('admin_user_index') }}">
-                        <button class="btn button-primary" href="">
+                        <button class="btn btn-primary" href="">
                             <span class="h5">Gestion des utilisateurs</span>
                             <img src="{{ asset('img/admin_user.png') }}" width="10%" alt="">
                         </button>
@@ -55,7 +55,7 @@
                 </li>
                 <li>
                     <a href="{{ path('admin_news_index') }}">
-                        <button class="btn button-primary" href="">
+                        <button class="btn btn-primary" href="">
                             <span class="h5">Gestion des news</span>
                             <img src="{{ asset('img/admin_news.png') }}" width="10%" alt="">
                         </button>

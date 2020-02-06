@@ -3,7 +3,8 @@
 {% block title %}Page d'accueil{% endblock %}
 
 {% block body %}
-
+<div class="news">{% include 'layout/_sidebar_right.html.twig' %}</div>
+<div class="list_country">{% include 'layout/_sidebar_left.html.twig' %}</div>
     <h2>Pourquoi ce site ?</h2>
     <p>
         Ce site a pour but de partager avec vous un bout de notre monde. <br>
@@ -16,7 +17,9 @@
         Tout d’abord laisser-moi vous montrer à quel point notre pays est magnifique et oui ! Inutile de faire des
         milliers de km pour croiser la beauté !<br>
     </p>
-    {% include 'Profile/_form.html.twig' %}
+    <div class="search">
+        {% include 'Profile/_form.html.twig' %}
+    </div>
     <div class="gridhome">
         {% for picture in pictures %}
             <a href="{{ vich_uploader_asset(picture, 'imageFile') }}">

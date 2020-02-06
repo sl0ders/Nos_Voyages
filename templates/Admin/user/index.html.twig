@@ -28,7 +28,7 @@
                 <td>{{ user.createdAt ? user.createdAt|date('d/m/Y H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('admin_user_show', {'id': user.id}) }}">
-                        <button class="btn button-sm button-primary">Détail <img src="{{ asset('img/detail.png') }}" alt=""></button></a>
+                        <button class="btn btn-sm btn-primary">Détail <img src="{{ asset('img/detail.png') }}" alt=""></button></a>
                 </td>
             </tr>
         {% else %}
@@ -40,5 +40,5 @@
     </table>
 
     <a href="{{ path('admin_user_new') }}">
-        <button class="btn button-sm button-primary">Creation d'un nouvelle utilisateur <img src="{{ asset('img/create.png') }}" alt=""></button></a>
+        <button class="btn btn-sm btn-primary">Creation d'un nouvelle utilisateur <img src="{{ asset('img/create.png') }}" alt=""></button></a>
 {% endblock %}

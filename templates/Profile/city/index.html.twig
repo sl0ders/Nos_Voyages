@@ -8,7 +8,7 @@
             <h2> {{ country.name }}</h2>
             {% for city in cities %}
                 <form action="{{ path('profile_picture_index', {'country':  city.country ,'city': city.name |slugify('-', ' ') }) }}" method="get">
-                    <button type="submit" class="btn button-primary city-name {{ city.name }}"> {{ city.name }}</button>
+                    <button type="submit" class="btn btn-primary city-name {{ city.name }}"> {{ city.name }}</button>
                 </form>
             {% endfor %}
             <img src="../../{{ country.map |capitalize}}" alt="">

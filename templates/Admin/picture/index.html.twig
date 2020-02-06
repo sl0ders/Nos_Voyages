@@ -1,71 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Picture index{% endblock %}
+{% block title %}Gestion des photos{% endblock %}
 
 {% block body %}
-    <h1>Picture index</h1>
-
+    <h2>Index de gestion des photos</h2>
     <a data-target="{{ path('admin_picture_new') }}" data-tooltip="voir"
        class="font-weight-bold tooltipped modal-trigger btn right-align"
        href="#modal1">
-
-        <button class="btn button-sm button-primary">Inserer une nouvelle image<img src="{{ asset('img/create.png') }}"
-                                                                                    alt=""></button>
+        <button class="btn btn-sm btn-primary">Inserer une nouvelle image<img src="{{ asset('img/create.png') }}" alt=""></button>
     </a>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Images</th>
-            <th>Titres</th>
-            <th>Description</th>
-            <th>Country</th>
-            <th>City</th>
-            <th>Jour de la prise</th>
-            <th>Nombre de commentaire</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for picture in pictures %}
-            <tr>
-                <td>{{ picture.id }}</td>
-                <td>
+    {% for picture in pictures %}
+            <div class="row mb-5 border bg-light">
+                <div class="col text-center">
+                    <h2 class="font-weight-bold">photo</h2>
                     <a href="{{ vich_uploader_asset(picture, 'imageFile') }}">
                         <img src="{{ vich_uploader_asset(picture, 'imageFile')|imagine_filter('thumb') }}"
                              alt="{{ picture.title }}" width="250" height="250">
                     </a>
-                </td>
-                <td>{{ picture.title }}</td>
-                <td>{{ picture.description }}</td>
-                <td>{{ picture.country }}</td>
-                <td>{{ picture.city }}</td>
-                <td>{{ picture.dayOfTaking }}</td>
-                <td>{{ picture.comments | length }}</td>
-                <td>
-                    <div class="d-flex justify-content-center">
-                        <a class="mt-2" href="{{ path('admin_picture_show', {'id': picture.id}) }}">
-                            <button class="btn button-primary">Détail <img src="{{ asset('img/detail.png') }}" alt=""></button>
-                        </a>
-
+                </div>
+                <div class="col text-center">
+                    <h2 class="font-weight-bold">Titre de la photo</h2>
+                    <h3>{{ picture.title }}</h3>
+                </div>
+                <div class="col text-center">
+                    <h2 class="font-weight-bold">Nombre de commentaire</h2>
+                    <div>{{ picture.comments | length }}</div>
+                </div>
+                <div class="col text-center">
+                    <h2 class="font-weight-bold">Actions</h2>
+                    <div>
+                        <div class="d-flex justify-content-center">
+                            <a class="mt-2" href="{{ path('admin_picture_show', {'id': picture.id}) }}">
+                                <button class="btn btn-primary">Détail <img src="{{ asset('img/detail.png') }}" alt="">
+                                </button>
+                            </a>
+                        </div>
+                        <div class="text-right">
+                            {{ include('admin/picture/_delete_form.html.twig') }}
+                        </div>
                     </div>
-                    <div class="text-right">{{ include('admin/picture/_delete_form.html.twig') }}</div>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">Aucune photo n'a été mise dans cette section</td>
-            </tr>
+                </div>
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
-    <div id="modal1" class="modal">
-        <div class="container">
-            <div class="modal-content">
+        <div id="modal1" class="modal">
+            <div class="container">
+                <div class="modal-content">
 
+                </div>
             </div>
         </div>
-    </div>
 {% endblock %}
 {% block javascripts %}
     <script>

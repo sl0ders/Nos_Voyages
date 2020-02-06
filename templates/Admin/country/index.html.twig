@@ -5,12 +5,12 @@
 {% block body %}
     <h2 class="h1 text-center p-5">Gestion des Lieux</h2>
     <a data-target="{{ path('admin_country_new') }}" data-tooltip="voir" class="font-weight-bold tooltipped modal-trigger btn right-align" href="#modal1">
-        <button class="btn button-sm button-primary">Ajouter un nouveau pays <img src="{{ asset('img/create.png') }}" alt=""></button>
+        <button class="btn btn-sm btn-primary">Ajouter un nouveau pays <img src="{{ asset('img/create.png') }}" alt=""></button>
     </a>
     <br>
     <div class="container">
         {% for country in countries %}
-            <div class="border admin-city">
+            <div class="border bg-light admin-city">
                 <h2 class="text-center mt-5">{{ country.name }}</h2>
                 <div class="row">
                     <div class="col-md-6">
@@ -20,7 +20,7 @@
                         <div class="action text-center mt-5">
                             {{ include('admin/country/_delete_form.html.twig') }}
                             <a class="pt-3" href="{{ path('admin_country_edit', {'id': country.id}) }}">
-                                <button class="btn button-primary">Modifier</button>
+                                <button class="btn btn-primary">Modifier</button>
                             </a>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                                     <a data-target="{{ path('admin_city_new') }}" data-tooltip="voir"
                                        class="tooltipped modal-trigger btn right-align"
                                        href="#modal1">
-                                        <button class="btn button-sm button-primary">Ajouter une nouvelle ville <img src="{{ asset('img/create.png') }}" alt=""></button>
+                                        <button class="btn btn-sm btn-primary">Ajouter une nouvelle ville <img src="{{ asset('img/create.png') }}" alt=""></button>
                                     </a>
                                     <ul>
                                         {% for city in country.cities |slice(0,25) %}

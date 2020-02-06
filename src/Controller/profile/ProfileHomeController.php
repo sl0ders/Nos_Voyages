@@ -5,6 +5,8 @@ namespace App\Controller\profile;
 use App\Data\SearchData;
 use App\Form\SearchType;
 use App\Repository\CityRepository;
+use App\Repository\CountryRepository;
+use App\Repository\NewsRepository;
 use App\Repository\PictureRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,13 +18,17 @@ class ProfileHomeController extends AbstractController
 {
     /**
      * @Route("/", name="homepage")
+     * @param CountryRepository $countryRepository
+     * @param NewsRepository $newsRepository
      * @param Request $request
      * @param PictureRepository $pictureRepository
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
-    public function index(Request $request, pictureRepository $pictureRepository ,AuthenticationUtils $authenticationUtils)
+    public function index(CountryRepository $countryRepository,NewsRepository $newsRepository, Request $request, pictureRepository $pictureRepository ,AuthenticationUtils $authenticationUtils)
     {
+        $news = $newsRepository->findAll();
+        $countries = $countryRepository->findAll();
         $data = new SearchData();
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
@@ -36,7 +42,9 @@ class ProfileHomeController extends AbstractController
             'lastUsername' => $lastUsername,
             '$error' => $error,
             'form' => $form->createView(),
-            'pictures' => $pictures
+            'pictures' => $pictures,
+            'news' => $news,
+            'countries' => $countries
         ]);
     }
 }
