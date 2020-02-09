@@ -1,30 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User index{% endblock %}
+{% block title %}Gestion des utilisateurs{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+    <h1 class="text-center m-5">Index de gestion des utilisateurs</h1>
 
-    <table class="table">
+<div class="responsive-table-line" style="margin:0 auto;max-width:1700px;">
+    <table class="table table-bordered table-condensed table-body-center">
         <thead>
-            <tr>
-                <th>Id</th>
+            <tr class="text-center">
                 <th>Adresse email</th>
-                <th>Role</th>
-                <th>Prénom</th>
-                <th>Nom de famille</th>
                 <th>Date de creation de l'utilisateur</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
+            <tr class="text-center">
                 <td>{{ user.email }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.firstname }}</td>
-                <td>{{ user.lastname }}</td>
                 <td>{{ user.createdAt ? user.createdAt|date('d/m/Y H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('admin_user_show', {'id': user.id}) }}">
@@ -38,7 +31,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+</div>
     <a href="{{ path('admin_user_new') }}">
         <button class="btn btn-sm btn-primary">Creation d'un nouvelle utilisateur <img src="{{ asset('img/create.png') }}" alt=""></button></a>
 {% endblock %}

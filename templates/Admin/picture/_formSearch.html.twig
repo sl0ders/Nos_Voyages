@@ -1,0 +1,5 @@
+{{ form_start(formSearch ,{"attr" : {'class' : "d-flex justify-content-around h4"}} ) }}
+ {{ form_row(formSearch.countries ,{"attr" : {'class' : "searchCities font-weight-bold"}} )  }}
+ {{ form_row(formSearch.cities ,{"attr" : {'class' : "searchCities"}} ) }}
+<button class="btn btn-sm h-25 mt-auto mb-auto btn-primary">{{ button_label|default('Chercher les photos correspondante') }}</button>
+{{ form_end(formSearch) }}

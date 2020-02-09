@@ -1,6 +1,17 @@
-<h1>Liste des news</h1>
-{% for new in news %}
-    {{ new.title }}
-{% endfor %}
+{% extends 'base.html.twig' %}
 
+{% block title %}Hello NewsController!{% endblock %}
 
+{% block body %}
+    <h2 class="font-weight-bold">Index des nouveautées !</h2>
+    {% for new in news %}
+        <div class="card">
+            <div class="card-body text-center">
+                <div class="card-title"><h3>{{ new.title }} {{ new.createdAt | date('d/m/Y') }}</h3></div>
+                <img class="card-img-top w-75" src="../img/pictures/{{ picture }}" alt="">
+                <p class="card-text">{{ new.content }}</p>
+                <a href="{{ path('profile_picture_index', {'city': new.city, 'country': new.city.country}) }}"><em>Voir toute les photos !</em></a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

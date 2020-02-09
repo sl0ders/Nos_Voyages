@@ -1,13 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Comment index{% endblock %}
+{% block title %}Gestion des commentaires{% endblock %}
 
 {% block body %}
-    <h1>Comment index</h1>
+    <h1 class="text-center m-5">Index de gestion des commentaires</h1>
 
-    <table class="table">
+<div class="responsive-table-line" style="margin:0 auto;max-width:1700px;">
+    <table class="table table-bordered table-condensed table-body-center">
         <thead>
-        <tr>
+        <tr class="text-center">
             <th>Id</th>
             <th>Content</th>
             <th>photo associée</th>
@@ -17,7 +18,7 @@
         </thead>
         <tbody>
         {% for comment in comments %}
-            <tr>
+            <tr class="text-center">
                 <td>{{ comment.id }}</td>
                 <td>{{ comment.content }}</td>
                 <td><a href="{{ path('admin_picture_show', {'id': comment.picture.id}) }}">{{ comment.picture }}</a>
@@ -46,4 +47,5 @@
         {% endfor %}
         </tbody>
     </table>
+</div>
 {% endblock %}

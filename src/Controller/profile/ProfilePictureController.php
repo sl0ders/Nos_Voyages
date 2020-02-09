@@ -34,6 +34,7 @@ class ProfilePictureController extends AbstractController
         $pictures = $pictureRepository->findBy(['city' => $city]);
         return $this->render('Profile/picture/index.html.twig', [
             'pictures' => $pictures,
+            'city' => $city
         ]);
     }
 

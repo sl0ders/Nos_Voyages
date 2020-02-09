@@ -3,20 +3,18 @@
 {% block title %}Gestion des pays{% endblock %}
 
 {% block body %}
-    <h2 class="h1 text-center p-5">Gestion des Lieux</h2>
-    <a data-target="{{ path('admin_country_new') }}" data-tooltip="voir" class="font-weight-bold tooltipped modal-trigger btn right-align" href="#modal1">
+    <h1 class="text-center">Index de gestion des Lieux</h1>
+    <a data-target="{{ path('admin_country_new') }}" data-tooltip="voir" class="w-100 mb-5 font-weight-bold tooltipped modal-trigger btn right-align" href="#modal1">
         <button class="btn btn-sm btn-primary">Ajouter un nouveau pays <img src="{{ asset('img/create.png') }}" alt=""></button>
     </a>
     <br>
     <div class="container">
         {% for country in countries %}
-            <div class="border bg-light admin-city">
-                <h2 class="text-center mt-5">{{ country.name }}</h2>
+            <div class="borde radmin-city bg mb-5 p-5">
+                <h2 class="text-center font-weight-bold">{{ country.name }}</h2>
                 <div class="row">
                     <div class="col-md-6">
-                        <a href="../../{{ country.name }}">
                             <img src="../../{{ country.map }}" alt="{{ country.map }}" class="w-100">
-                        </a>
                         <div class="action text-center mt-5">
                             {{ include('admin/country/_delete_form.html.twig') }}
                             <a class="pt-3" href="{{ path('admin_country_edit', {'id': country.id}) }}">
@@ -28,9 +26,9 @@
                         <h3 class="mb-5 text-center">Liste des villes répertoriées</h3>
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-7">
+                                <div class="col-md-12">
                                     <a data-target="{{ path('admin_city_new') }}" data-tooltip="voir"
-                                       class="tooltipped modal-trigger btn right-align"
+                                       class="w-100 mb-3 tooltipped modal-trigger btn center"
                                        href="#modal1">
                                         <button class="btn btn-sm btn-primary">Ajouter une nouvelle ville <img src="{{ asset('img/create.png') }}" alt=""></button>
                                     </a>

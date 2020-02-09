@@ -4,8 +4,9 @@
         </h3>
         {% for new in news %}
                 <div class="body border">
-                    <a href="{{ path('profile_country_index', {'name': new.city.country}) }}">
-                    <h4>{{ new.title }} <em>{{ new.createdAt | date('d/m/Y H:i:s') }}</em></h4></a>
+                    <a class="text-decoration-none" href="{{ path('news', {'id' : new.id }) }}">
+                    <h2 class="h4">{{ new.title }} <em>{{ new.createdAt | date('d/m/Y') }}</em></h2>
+                    </a>
                     <p>{{ new.content }}</p>
                 </div>
         {% endfor %}

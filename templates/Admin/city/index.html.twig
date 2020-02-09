@@ -3,11 +3,11 @@
 {% block title %}Index de l'administration des villes{% endblock %}
 
 {% block body %}
-    <h2 class="h1 text-center p-5">Index de l'administration des villes</h2>
-
-    <table class="table">
+    <h2 class="h1 text-center m-5">Index de l'administration des villes</h2>
+<div class="responsive-table-line" style="margin:0 auto;max-width:1700px;">
+    <table class="table table-bordered table-condensed table-body-center">
         <thead>
-        <tr>
+        <tr class="text-center">
             <th>Id</th>
             <th>Nom de la ville</th>
             <th>Nom de son pays</th>
@@ -16,7 +16,7 @@
         </thead>
         <tbody>
         {% for city in cities %}
-            <tr>
+            <tr class="text-center">
                 <td>{{ city.id }}</td>
                 <td>{{ city.name }}</td>
                 <td>{{ city.country }}</td>
@@ -36,8 +36,11 @@
         {% endfor %}
         </tbody>
     </table>
+</div>
     <br>
-    <a href="{{ path('admin_country_index') }}"><img style="transform: rotate(180deg)" src="{{ asset('img/arrowx.png') }}" alt="">Revenir a l'index de gestion des pays</a>
+    <a href="{{ path('admin_country_index') }}"><img style="transform: rotate(180deg)"
+                                                     src="{{ asset('img/arrowx.png') }}" alt="">Revenir a l'index de
+        gestion des pays</a>
     <div id="modal1" class="modal">
         <div class="container">
             <div class="modal-content">

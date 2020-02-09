@@ -2,9 +2,12 @@
 
 namespace App\Controller\Admin;
 
+use App\Data\SearchData;
 use App\Entity\Picture;
 use App\Form\PictureEditType;
 use App\Form\PictureNewType;
+use App\Form\SearchType;
+use App\Repository\CountryRepository;
 use App\Repository\PictureRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,15 +21,25 @@ class AdminPictureController extends AbstractController
 {
     /**
      * @Route("/", name="admin_picture_index", methods={"GET","POST"})
+     * @param CountryRepository $countryRepository
      * @param Request $request
      * @param PictureRepository $pictureRepository
      * @return Response
      */
-    public function index(Request $request, PictureRepository $pictureRepository): Response
+    public function index(CountryRepository $countryRepository, Request $request, PictureRepository $pictureRepository): Response
     {
         $picture = new Picture();
+        $countries = $countryRepository->findAll();
+
+        $data = new SearchData();
+
+        $formSearch = $this->createForm(SearchType::class, $data);
+        $formSearch->handleRequest($request);
+        $pictures = $pictureRepository->findSearch($data);
+
         $form = $this->createForm(PictureNewType::class, $picture);
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
             $picture->setFilename('img/pictures/'.$picture->getTitle());
             $entityManager = $this->getDoctrine()->getManager();
@@ -37,7 +50,11 @@ class AdminPictureController extends AbstractController
             return $this->redirectToRoute('admin_picture_index');
         }
         return $this->render('Admin/picture/index.html.twig', [
-            'pictures' => $pictureRepository->findAll(),
+            'pictures' => $pictures,
+            'picture' => $picture,
+            'countries' => $countries,
+            'form' => $form->createView(),
+            'formSearch' => $formSearch->createView()
         ]);
     }
 

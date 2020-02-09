@@ -3,22 +3,21 @@
 {% block title %}Index de gestion des news{% endblock %}
 
 {% block body %}
-    <h1>Index de gestion des news</h1>
+    <h1 class="text-center m-5">Index de gestion des news</h1>
 
-    <table class="table">
+<div class="responsive-table-line" style="margin:0 auto;max-width:1700px;">
+    <table class="table table-bordered table-condensed table-body-center">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre de la news</th>
-                <th>Contenu de la news</th>
-                <th>Date de creation</th>
-                <th>Actions</th>
+            <tr class="text-center">
+                <th scope="col">Titre de la news</th>
+                <th scope="col">Contenu de la news</th>
+                <th scope="col">Date de creation</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for news in news %}
-            <tr>
-                <td>{{ news.id }}</td>
+            <tr class="text-center">
                 <td>{{ news.title }}</td>
                 <td>{{ news.content }}</td>
                 <td>{{ news.createdAt ? news.createdAt|date('d/m/Y H:i:s') : '' }}</td>
@@ -39,7 +38,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+</div>
     <a data-target="{{ path('admin_news_new') }}" data-tooltip="voir"
        class="tooltipped modal-trigger btn right-align"
        href="#modal1">

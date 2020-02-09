@@ -1,67 +1,58 @@
     {% if not is_granted("ROLE_ADMIN") %}
-        <h2>Nos destinations</h2>
+        <h2 class="font-weight-bold text-center m-3">Nos destinations</h2>
         {% for country in countries %}
-            <form action="{{ path('profile_country_index', {'name':  country.name }) }}">
-                <button type="submit" class="p-1 w-50 btn btn-primary">{{ country.name }}<img src="../img/{{ country.name }}_logo.png" alt=""></button>
-            </form>
+            <a class="text-decoration-none" href="{{ path('profile_country_index', {'name':  country.name }) }}">
+                <button type="submit" class="p-1 btn btn-primary w-100 d-flex justify-content-between">
+                    <span class="h5">{{ country.name }}</span>
+                    <img src="../img/{{ country.name }}_logo.png" alt="">
+                </button>
+            </a>
         {% endfor %}
     {% endif %}
     {% if is_granted("ROLE_ADMIN") %}
         <div class="mt-5">
-            <h1 class="text-center">
+            <h2 class="font-weight-bold text-center">
                 Administration
-            </h1>
+            </h2>
             <br>
-            <ul class="list-unstyled">
-                <li>
-                    <a href="{{ path('admin_country_index') }}">
-                        <button type="button" class="btn btn-primary">
+            <div class="list-unstyled m-auto">
+                    <a class="text-decoration-none" href="{{ path('admin_country_index') }}">
+                        <button type="button" class="btn btn-primary w-100 d-flex justify-content-between">
                             <span class="h5">Gestion des pays</span>
-                            <img src="{{ asset('img/admin_country.png') }}" width="10%" alt="">
+                            <img src="{{ asset('img/admin_country.png') }}" width="15%" alt="">
                         </button>
                     </a>
-                </li>
-                <li>
-                    <a href="{{ path('admin_city_index') }}">
-                        <button class="btn btn-primary">
+                    <a class="text-decoration-none" href="{{ path('admin_city_index') }}">
+                        <button class="btn btn-primary w-100 d-flex justify-content-between">
                             <span class="h5">Gestion des villes</span>
-                            <img src="{{ asset('img/admin_city.png') }}" width="10%" alt="">
+                            <img src="{{ asset('img/admin_city.png') }}" width="15%" alt="">
                         </button>
                     </a>
-                </li>
-                <li>
-                    <a href="{{ path('admin_picture_index') }}">
-                        <button class="btn btn-primary" >
+                    <a class="text-decoration-none" href="{{ path('admin_picture_index') }}">
+                        <button class="btn btn-primary w-100 d-flex justify-content-between" >
                             <span class="h5">Gestion des photos</span>
-                            <img src="{{ asset('img/admin_picture.png') }}" width="10%" alt="">
+                            <img src="{{ asset('img/admin_picture.png') }}" width="15%" alt="">
                         </button>
                     </a>
-                </li>
-                <li>
-                    <a href="{{ path('admin_comment_index') }}">
-                        <button class="btn btn-primary" >
+                    <a class="text-decoration-none" href="{{ path('admin_comment_index') }}">
+                        <button class="btn btn-primary w-100 d-flex justify-content-between" >
                             <span class="h5">Gestion des commentaires</span>
-                            <img src="{{ asset('img/admin_commentaires.png') }}" width="10%" alt="">
+                            <img src="{{ asset('img/admin_commentaires.png') }}" width="15%" alt="">
                         </button>
                     </a>
-                </li>
-                <li>
-                    <a href="{{ path('admin_user_index') }}">
-                        <button class="btn btn-primary" href="">
+                    <a class="text-decoration-none" href="{{ path('admin_user_index') }}">
+                        <button class="btn btn-primary w-100 d-flex justify-content-between">
                             <span class="h5">Gestion des utilisateurs</span>
-                            <img src="{{ asset('img/admin_user.png') }}" width="10%" alt="">
+                            <img src="{{ asset('img/admin_user.png') }}" width="15%" alt="">
                         </button>
                     </a>
-                </li>
-                <li>
-                    <a href="{{ path('admin_news_index') }}">
-                        <button class="btn btn-primary" href="">
+                    <a class="text-decoration-none" href="{{ path('admin_news_index') }}">
+                        <button class="btn btn-primary w-100 d-flex justify-content-between">
                             <span class="h5">Gestion des news</span>
-                            <img src="{{ asset('img/admin_news.png') }}" width="10%" alt="">
+                            <img src="{{ asset('img/admin_news.png') }}" width="15%" alt="">
                         </button>
                     </a>
-                </li>
-            </ul>
+            </div>
         </div>
     {% endif %}
 
