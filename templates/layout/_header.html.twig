@@ -25,7 +25,7 @@
                         <button class="btn btn-danger">deconnection</button>
                     </a>
                 {% else %}
-                    <div class="nav-link">
+                    <div class="nav-link text-center">
                         <form action="{{ path('app_login') }}" method="post" class="form-group">
                             <label for="adresse_email">
                                 <input type="text" name="_username" placeholder="Adresse email ..." id="adresse_email"
@@ -36,15 +36,16 @@
                                        class="form-control">
                             </label>
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                            <button type="submit"
-                                    style="background-color: transparent; border:none; cursor: pointer;margin-top: 20px">
+                            <button type="submit" class="btn-primary btn btn-sm">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24">
                                     <path d="M12 4v-4l12 12-12 12v-4h-12v-16z" fill="white"/>
                                 </svg>
                             </button>
                         </form>
                     </div>
-                    <a class="nav-link mt-md-3 mt-sm-3" href="{{ path('app_signhup') }}">
+
+                    <a class="nav-link" href="{{ path('app_signhup') }}">
+                        <span class="text-white">Si vous n'etes pas encore inscrit <img src="{{ asset('img/arrowx.png') }}" alt=""></span>
                         <button class="btn btn-success">S'inscrire</button>
                     </a>
                 {% endif %}

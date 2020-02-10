@@ -3,7 +3,7 @@
 {% block title %}Index de gestion des news{% endblock %}
 
 {% block body %}
-    <h1 class="text-center m-5">Index de gestion des news</h1>
+    <h2 class="h1 text-center m-5">Index de gestion des news</h2>
 
 <div class="responsive-table-line" style="margin:0 auto;max-width:1700px;">
     <table class="table table-bordered table-condensed table-body-center">
@@ -22,10 +22,6 @@
                 <td>{{ news.content }}</td>
                 <td>{{ news.createdAt ? news.createdAt|date('d/m/Y H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('admin_news_delete', {'id': news.id}) }}">
-                        <button class="btn btn-danger btn-sm">
-                            Supprimer
-                        </button></a>
                     <a href="{{ path('admin_news_edit', {'id': news.id}) }}">
                         <button class="btn btn-primary btn-sm">Éditer la news </button>
                     </a>

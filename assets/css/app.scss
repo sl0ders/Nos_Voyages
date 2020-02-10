@@ -1,17 +1,29 @@
-@import "~bootstrap";
+@font-face {
+  font-family: "Fantasy W01 Regular1504285";
+  src: url("/Fonts/d59cb9bb-e302-4d03-a28c-f5d7fc170d1d.eot?#iefix");
+  src: url("/Fonts/d59cb9bb-e302-4d03-a28c-f5d7fc170d1d.eot?#iefix") format("eot"),
+  url("/Fonts/67ba6174-8662-4877-8c71-6938b098652b.woff2") format("woff2"),
+  url("/Fonts/66f396d7-a2f5-48ff-b666-529e61be0af8.woff") format("woff"),
+  url("/Fonts/452560bc-7196-4154-9b64-b9bb79494473.ttf") format("truetype");
+}
+
+@import "~bootstrap/scss/bootstrap";
 
 * {
   box-sizing: border-box;
 }
 
-
 body, html {
-  font-family: "Goudy Old Style", serif;
-  text-shadow: #2b3664 5px 0 20px;
+  font-family: "Fantasy W01 Regular1504285", serif;
   width: 100%;
   margin: 0 auto;
   padding: 0;
+  font-weight: 600;
   background: url('../../public/img/map_word.png') center;
+
+  h4, h5, h3, h2 {
+    font-weight: bold;
+  }
 
   table {
     th {
@@ -22,6 +34,7 @@ body, html {
       font-size: 1.2em;
     }
   }
+
   @media (max-width: 700px) {
     .responsive-table-line td:before {
       content: attr(data-title);
@@ -164,11 +177,18 @@ header {
   padding-bottom: 250px;
   background-color: rgba(255, 255, 255, 0.6);
 
+  .search {
+    .form-check-label {
+      font-weight: 600;
+    }
+  }
+
   .bg {
     background-color: rgba(153, 162, 255, 0.3);
   }
 
   h2 {
+    font-weight: 900;
     text-align: center;
     margin: 25px;
   }
@@ -177,12 +197,11 @@ header {
     color: #062c33;
     filter: none;
     text-align: center;
-    font-size: 1.5em;
+    font-weight: 600;
+    font-size: 1.4em;
   }
 
   .modal {
-    margin-top: 5%;
-
     .modal-content {
       background-color: rgba(#b2d4ee, .9);
 
@@ -195,11 +214,11 @@ header {
       }
 
       .container {
-        padding: 10px;
+        padding: 5px;
 
         .cross {
           position: absolute;
-          right: 0;
+          right: 10px;
           top: 10px;
           z-index: 25;
           color: #1b1e21;
@@ -284,12 +303,10 @@ header {
 
   .list_country {
     display: none;
+
     @media screen and (max-width: 1341px) {
       display: block;
       text-align: center;
-      .search {
-        display: none;
-      }
     }
   }
 
@@ -490,7 +507,7 @@ header {
 
     img {
       width: 100%;
-      height: 100%;
+      height: 350px;
     }
 
   }

@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminNewsController extends AbstractController
 {
     /**
-     * @Route("/", name="admin_news_index", methods={"GET","POST"})
+     * @Route("/", name="admin_news_index", methods={"GET","POST","DELETE"})
      * @param Request $request
      * @param NewsRepository $newsRepository
      * @return Response
@@ -36,7 +36,7 @@ class AdminNewsController extends AbstractController
 
             return $this->redirectToRoute('admin_news_index');
         }
-        return $this->render('admin/news/index.html.twig', [
+        return $this->render('Admin/news/index.html.twig', [
             'news' => $newsRepository->findAll(),
         ]);
     }
@@ -53,7 +53,7 @@ class AdminNewsController extends AbstractController
         $form = $this->createForm(NewsType::class, $news);
         $form->handleRequest($request);
 
-        return $this->render('admin/news/new.html.twig', [
+        return $this->render('Admin/news/new.html.twig', [
             'news' => $news,
             'form' => $form->createView(),
         ]);
@@ -76,7 +76,7 @@ class AdminNewsController extends AbstractController
             return $this->redirectToRoute('admin_news_index');
         }
 
-        return $this->render('admin/news/edit.html.twig', [
+        return $this->render('Admin/news/edit.html.twig', [
             'news' => $news,
             'form' => $form->createView(),
         ]);

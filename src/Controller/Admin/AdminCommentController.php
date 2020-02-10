@@ -22,7 +22,7 @@ class AdminCommentController extends AbstractController
      */
     public function index(CommentRepository $commentRepository): Response
     {
-        return $this->render('admin/comment/index.html.twig', [
+        return $this->render('Admin/comment/index.html.twig', [
             'comments' => $commentRepository->findAll(),
         ]);
     }
@@ -43,7 +43,7 @@ class AdminCommentController extends AbstractController
             $entityManager->flush();
             return $this->redirectToRoute('admin_comment_index');
         }
-        return $this->render('admin/comment/index.html.twig', [
+        return $this->render('Admin/comment/index.html.twig', [
             'comments' => $commentRepository->findAll(),
         ]);
     }

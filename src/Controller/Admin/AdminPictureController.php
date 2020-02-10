@@ -41,7 +41,7 @@ class AdminPictureController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $picture->setFilename('img/pictures/'.$picture->getTitle());
+            $picture->setFilename('img/pictures/'.$picture->getCity().'/'.$picture->getTitle());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($picture);
             $picture->setLink('img/pictures/' . $picture->getFilename());
@@ -69,7 +69,7 @@ class AdminPictureController extends AbstractController
         $form = $this->createForm(PictureNewType::class, $picture);
         $form->handleRequest($request);
 
-        return $this->render('admin/picture/new.html.twig', [
+        return $this->render('Admin/picture/new.html.twig', [
             'picture' => $picture,
             'form' => $form->createView(),
         ]);
@@ -111,7 +111,7 @@ class AdminPictureController extends AbstractController
         $form = $this->createForm(PictureEditType::class, $picture);
         $form->handleRequest($request);
 
-        return $this->render('admin/picture/edit.html.twig', [
+        return $this->render('Admin/picture/edit.html.twig', [
             'picture' => $picture,
             'form' => $form->createView(),
         ]);
@@ -127,6 +127,10 @@ class AdminPictureController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete' . $picture->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
+            $city = $picture->getCity()->getPicture()->count();
+            if ($city >1 == false){
+                $entityManager->remove($picture->getCity());
+            }
             $entityManager->remove($picture);
             $entityManager->flush();
         }

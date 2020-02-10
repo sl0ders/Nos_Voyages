@@ -3,7 +3,7 @@
 {% block title %}Gestion des pays{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Index de gestion des Lieux</h1>
+    <h2 class="h1 text-center">Index de gestion des Lieux</h2>
     <a data-target="{{ path('admin_country_new') }}" data-tooltip="voir" class="w-100 mb-5 font-weight-bold tooltipped modal-trigger btn right-align" href="#modal1">
         <button class="btn btn-sm btn-primary">Ajouter un nouveau pays <img src="{{ asset('img/create.png') }}" alt=""></button>
     </a>
@@ -16,7 +16,7 @@
                     <div class="col-md-6">
                             <img src="../../{{ country.map }}" alt="{{ country.map }}" class="w-100">
                         <div class="action text-center mt-5">
-                            {{ include('admin/country/_delete_form.html.twig') }}
+                            {{ include('Admin/country/_delete_form.html.twig') }}
                             <a class="pt-3" href="{{ path('admin_country_edit', {'id': country.id}) }}">
                                 <button class="btn btn-primary">Modifier</button>
                             </a>

@@ -23,7 +23,7 @@ class AdminCityController extends AbstractController
      */
     public function index(CityRepository $cityRepository): Response
     {
-        return $this->render('admin/city/index.html.twig', [
+        return $this->render('Admin/city/index.html.twig', [
             'cities' => $cityRepository->findAll(),
         ]);
     }
@@ -39,15 +39,7 @@ class AdminCityController extends AbstractController
         $form = $this->createForm(CityType::class, $city);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($city);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('admin_city_index');
-        }
-
-        return $this->render('admin/city/new.html.twig', [
+        return $this->render('Admin/city/new.html.twig', [
             'city' => $city,
             'form' => $form->createView(),
         ]);
@@ -82,7 +74,7 @@ class AdminCityController extends AbstractController
             return $this->redirectToRoute('admin_city_index');
         }
 
-        return $this->render('admin/city/edit.html.twig', [
+        return $this->render('Admin/city/edit.html.twig', [
             'city' => $city,
             'form' => $form->createView(),
         ]);

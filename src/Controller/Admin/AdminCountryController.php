@@ -66,7 +66,7 @@ class AdminCountryController extends AbstractController
         $form = $this->createForm(CountryType::class, $country);
         $form->handleRequest($request);
 
-        return $this->render('admin/country/new.html.twig', [
+        return $this->render('Admin/country/new.html.twig', [
             'country' => $country,
             'form' => $form->createView(),
         ]);
@@ -90,7 +90,7 @@ class AdminCountryController extends AbstractController
             return $this->redirectToRoute('admin_country_index');
         }
 
-        return $this->render('admin/country/edit.html.twig', [
+        return $this->render('Admin/country/edit.html.twig', [
             'country' => $country,
             'form' => $form->createView(),
         ]);

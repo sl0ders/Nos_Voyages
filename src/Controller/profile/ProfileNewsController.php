@@ -22,7 +22,7 @@ class ProfileNewsController extends AbstractController
         $picture = $new->getCity()->getPicture()[0];
         $picture = $picture->getFilename();
         $newss = $newsRepository->findAll();
-        return $this->render('profile/news/index.html.twig', [
+        return $this->render('Profile/news/index.html.twig', [
             'news' => $newss,
             'picture' =>$picture
         ]);

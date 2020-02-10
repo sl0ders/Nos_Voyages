@@ -2,46 +2,62 @@
 
 {% block title %}Gestion des photos{% endblock %}
 
-
 {% block body %}
-        <h1 class="text-center m-5">Index de gestion des photos</h1>
-        <div class="responsive-table-line" style="margin:0 auto;max-width:1700px;">
-            <table class="table table-bordered table-condensed table-body-center">
-                <thead>
+    <h2 class="h1 text-center m-5">Index de gestion des photos</h2>
+    <div class="search">
+        {% include 'Admin/picture/_formSearch.html.twig' %}
+    </div>
+    <a data-target="{{ path('admin_picture_new') }}" data-tooltip="voir"
+       class="font-weight-bold tooltipped modal-trigger btn right-align"
+       href="#modal1">
+        <button class="btn btn-sm btn-primary">Inserer une nouvelle image<img src="{{ asset('img/create.png') }}" alt=""></button>
+    </a>
+    <div class="responsive-table-line" style="margin:0 auto;max-width:1700px;">
+        <table class="table table-bordered table-condensed table-body-center">
+            <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Titre de la photo</th>
+                <th>Nombre de commentaire</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for picture in pictures %}
                 <tr>
-                    <th>Photo</th>
-                    <th>Titre de la photo</th>
-                    <th>Nombre de commentaire</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for picture in pictures %}
-                    <tr>
-                        <td scope="row"><a href="{{ vich_uploader_asset(picture, 'imageFile') }}">
-                                <img src="{{ vich_uploader_asset(picture, 'imageFile')|imagine_filter('thumb') }}"
-                                     alt="{{ picture.title }}" width="250" height="250">
-                            </a></td>
-                        <td><h3>{{ picture.title }}</h3></td>
-                        <td>{{ picture.comments | length }}</td>
-                        <td>
-                            <div class="d-flex justify-content-center flex-wrap">
-                                <a class="mt-2" href="{{ path('admin_picture_show', {'id': picture.id}) }}">
-                                    <button class="btn btn-primary">
-                                        Détail
-                                        <img src="{{ asset('img/detail.png') }}" alt="">
-                                    </button>
-                                </a>
-                                <div class="text-right">
-                                    {{ include('admin/picture/_delete_form.html.twig') }}
-                                </div>
+                    <td scope="row">
+                        <a href="{{ vich_uploader_asset(picture, 'imageFile') }}">
+                            <img src="{{ vich_uploader_asset(picture, 'imageFile')|imagine_filter('thumb') }}"
+                                 alt="{{ picture.title }}" width="250" height="250">
+                        </a>
+                    </td>
+                    <td><h3>{{ picture.title }}</h3></td>
+                    <td>{{ picture.comments | length }}</td>
+                    <td>
+                        <div class="d-flex justify-content-center flex-wrap">
+                            <a class="mt-2" href="{{ path('admin_picture_show', {'id': picture.id}) }}">
+                                <button class="btn btn-primary">
+                                    Détail
+                                    <img src="{{ asset('img/detail.png') }}" alt="">
+                                </button>
+                            </a>
+                            <div class="text-right">
+                                {{ include('Admin/picture/_delete_form.html.twig') }}
                             </div>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div id="modal1" class="modal">
+        <div class="container">
+            <div class="modal-content">
+
+            </div>
         </div>
+    </div>
 {% endblock %}
 {% block javascripts %}
     <script>

@@ -1,4 +1,11 @@
- {{ form_start(form) }}
- {{ form_widget(form) }}
+{{ form_start(form) }}
+ {{ form_row(form.imageFile) }}
+ {{ form_row(form.dayOfTaking) }}
+ {{ form_row(form.title) }}
+ {{ form_row(form.imageFile) }}
+ {{ form_row(form.description) }}
+ {{ form_row(form.country) }}
+ {{ form_row(form.city) }}
+ {{ form_row(form.author) }}
  <button class="btn btn-sm btn-primary">{{ button_label|default('Ajouter') }}</button>
  {{ form_end(form) }}
