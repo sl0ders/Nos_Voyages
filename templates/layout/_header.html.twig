@@ -1,27 +1,21 @@
 <header class="container-fluid position-relative w-100">
-    <nav class="navbar navbar-expand-sm">
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-                aria-controls="collapsibleNavId"
-                aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-sm w-100">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><img src="{{ asset('img/svg/toggle-bar.svg') }}" alt=""></span>
         </button>
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li>
-                <a class="pointer-event nav-link" href="/">
-                    <img src="{{ asset('img/svg/home.svg') }}" width="30" alt="">
-                </a>
-            </li>
-        </ul>
+        <a class="navbar-nav mt-0 mt-lg-0 pointer-event nav-link mr-5" href="/">
+            <img src="{{ asset('img/svg/home.svg') }}" width="30" alt="">
+        </a>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-
-            <div class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <ul class="navbar-nav ml-auto">
                 {% if is_granted('ROLE_ADMIN') %}
-                    <a class="nav-link" href="{{ path('admin_home') }}">
+                    <a class="" href="{{ path('admin_home') }}">
                         <button class="btn btn-primary">Administration</button>
                     </a>
                 {% endif %}
                 {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
-                    <a class="nav-link" href="{{ path('app_logout') }}">
+                    <a class="" href="{{ path('app_logout') }}">
                         <button class="btn btn-danger">deconnection</button>
                     </a>
                 {% else %}
@@ -43,13 +37,13 @@
                             </button>
                         </form>
                     </div>
-
                     <a class="nav-link" href="{{ path('app_signhup') }}">
-                        <span class="text-white">Si vous n'etes pas encore inscrit <img src="{{ asset('img/arrowx.png') }}" alt=""></span>
+                        <span class="text-white">Si vous n'etes pas encore inscrit <img
+                                    src="{{ asset('img/arrowx.png') }}" alt=""></span>
                         <button class="btn btn-success">S'inscrire</button>
                     </a>
                 {% endif %}
-            </div>
+            </ul>
         </div>
     </nav>
     <h1 class="text-white text-center">Une vie, des voyages</h1>

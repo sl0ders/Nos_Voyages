@@ -9,17 +9,15 @@
         <table class="table table-bordered table-condensed table-body-center">
             <thead>
             <tr class="text-center">
-                <th>Id</th>
-                <th>Content</th>
+                <th>Contenu du commentaire</th>
                 <th>photo associée</th>
-                <th>Created_at</th>
+                <th>Créer le</th>
                 <th>actions</th>
             </tr>
             </thead>
             <tbody>
             {% for comment in comments %}
                 <tr class="text-center">
-                    <td>{{ comment.id }}</td>
                     <td>{{ comment.content }}</td>
                     <td><a href="{{ path('admin_picture_show', {'id': comment.picture.id}) }}">{{ comment.picture }}</a>
                     </td>
@@ -33,7 +31,7 @@
                                            id="reporting" {% if comment.enabled == true %} checked disabled {% endif %} >
                                     {% if comment.enabled == false %}
                                     <label for="reporting"></label>
-                                    <button class="btn btn-warning ml-2" type="submit">validé</button>
+                                    <button class="btn btn-warning ml-2" type="submit">Validé</button>
                                 </div>
                             </div>
                             {% endif %}

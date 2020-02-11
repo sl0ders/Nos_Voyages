@@ -5,7 +5,7 @@
         {% for new in news %}
                 <div class="body border">
                     <a class="text-decoration-none" href="{{ path('news', {'id' : new.id }) }}">
-                    <h2 class="h4">{{ new.title }} <em>{{ new.createdAt | date('d/m/Y') }}</em></h2>
+                    <h2 class="h4">{{ new.title }} <br><span>{{ new.createdAt | date('d/m/Y') }}</span></h2>
                     </a>
                     <p>{{ new.content }}</p>
                 </div>

@@ -4,7 +4,7 @@
             <a class="text-decoration-none" href="{{ path('profile_country_index', {'name':  country.name }) }}">
                 <button type="submit" class="p-1 btn btn-primary w-100 d-flex justify-content-between">
                     <span class="h5">{{ country.name }}</span>
-                    <img width="30" height="30" src="../img/{{ country.name }}_logo.png" alt="">
+                    <img class="mt-auto mb-auto" width="35" height="35" src="../img/{{ country.name }}_logo.png" alt="">
                 </button>
             </a>
         {% endfor %}

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Visualisation des photes de {{ city }}{% endblock %}
 
 {% block body %}
     <h2>Photo de {{ city }}</h2>
@@ -9,9 +9,7 @@
     {% for picture in pictures %}
         {% if picture.filename %}
             <div class="d-flex flex-wrap">
-                <img class="arrowx" src="{{ asset('img/arrowx.png') }}" alt="" width="8%" height="8%">
-                <a class="d-flex"
-                   href="{{ path('profile_picture_show', {'id': picture.id , 'country': picture.country, 'city' : picture.city}) }}">
+                <a class="d-flex m-auto" href="{{ path('profile_picture_show', {'id': picture.id , 'country': picture.country, 'city' : picture.city}) }}">
                     Voir les details de la photo
                 </a>
                 <a class="w-100" href="{{ vich_uploader_asset(picture, 'imageFile') }}">

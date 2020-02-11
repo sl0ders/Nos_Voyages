@@ -22,8 +22,8 @@
     </div>
     <div class="gridhome">
         {% for picture in pictures %}
-            <a href="{{ vich_uploader_asset(picture, 'imageFile') }}">
-                <img class="col-md-12" src="{{ vich_uploader_asset(picture, 'imageFile') }}" alt="">
+            <a style="overflow: hidden;" href="{{ vich_uploader_asset(picture, 'imageFile')  }}">
+                <img src="{{ vich_uploader_asset(picture, 'imageFile') |imagine_filter('thumb')}}" alt="">
             </a>
         {% endfor %}
     </div>

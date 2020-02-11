@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Les villes de france{% endblock %}
+{% block title %}Villes d{% if country.name == "Angleterre" %}'{% else %}e{% endif %}{% if country.name == "States"%}s {% endif %} {{ country.name }}{% endblock %}
 
 {% block body %}
     <div class="index__country">

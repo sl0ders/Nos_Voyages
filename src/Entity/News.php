@@ -32,7 +32,7 @@ class News
     private $created_at;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\City", inversedBy="news", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\City", inversedBy="news", cascade={"persist"})
      */
     private $city;
 

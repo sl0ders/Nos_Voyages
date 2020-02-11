@@ -4,17 +4,17 @@
     <h2 class="text-center">{{ picture.title }}</h2>
     <p class="text-left">{{ picture.description }}</p>
     <div class="row">
-        <a class="col-md-8" href="{{ vich_uploader_asset(picture, 'imageFile') }}">
+        <a class="col-md-7" href="{{ vich_uploader_asset(picture, 'imageFile') }}">
             <img class="col-md-12" src="{{ vich_uploader_asset(picture, 'imageFile') }}" alt="">
         </a>
-        <div class="col-md-4">
+        <div class="col-md-5">
             {% if is_granted('ROLE_USER') %}
                 {% include('Profile/comment/_form.html.twig') %}
             {% endif %}
             {% if not app.user %}
                 <div class="text-center">
                     <img src="{{ asset('img/svg/warning.svg') }}" alt="" width="40">
-                    <h6 class="alert-danger mt-2">
+                    <h6 class="alert-warning mt-2">
                         Afin de pouvoir commenter une photo veuillez au prealable vous connecter !
                     </h6>
                 </div>
@@ -31,6 +31,33 @@
                     </div>
                 {% endif %}
             {% endfor %}
+                <ul class="list-unstyled border">
+                    <li class=" d-flex justify-content-between">
+                        <span class="h3">Titre : </span>{{ picture.title }}
+                    </li>
+                    <li class=" d-flex justify-content-between">
+                        <span class="h3">Auteur de la photo : </span>{{ picture.author }}
+                    </li>
+                    <li class=" d-flex justify-content-between">
+                        <span class="h3">Date de prise : </span>{{ picture.dayOfTaking }}
+                    </li>
+                    <li class=" d-flex justify-content-between">
+                        <span class="h3">Ville : </span>{{ picture.city }}
+                    </li>
+                    <li class=" d-flex justify-content-between">
+                        <span class="h3">Pays : </span>{{ picture.country }}
+                    </li>
+                    <li class="text-center">
+                        <h3 class="m-auto">Description : </h3>
+                        {% if not picture.description %}...{% else %}{{ picture.description }}{% endif %}
+                    </li>
+                </ul>
+
+
+
+
+
+
         </div>
     </div>
 {% endblock %}
