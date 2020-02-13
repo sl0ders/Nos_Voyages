@@ -7,5 +7,11 @@
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mariadb://localhost:3306/nos_voyages</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="nos_voyages" uuid="b8c919fa-a439-468c-8787-0f5753e82bd4">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/var/nos_voyages.db</jdbc-url>
+    </data-source>
   </component>
 </project>

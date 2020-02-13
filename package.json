@@ -16,8 +16,10 @@
     "dependencies": {
         "bootstrap": "^4.4.1",
         "exif-js": "^2.3.0",
+        "jQuery": "^1.7.4",
         "jquery": "^3.4.1",
         "node-sass": "^4.13.1",
+        "npm": "^6.13.7",
         "popper.js": "^1.16.1",
         "sass-loader": "^7.0.1"
     }

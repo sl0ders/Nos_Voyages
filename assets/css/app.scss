@@ -14,7 +14,7 @@
 }
 
 body, html {
-  font-family: "Fantasy W01 Regular1504285", serif;
+  font-family: "fantasy,Fantasy W01 Regular1504285", serif;
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -340,7 +340,6 @@ header {
   }
 
   .signup {
-    background: rgba(255, 255, 255, 0.9) url("../../public/img/signup.png") no-repeat center center;
     font-size: 1.5rem;
 
     button {
