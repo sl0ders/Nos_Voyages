@@ -59,6 +59,11 @@
     <select />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Nos_Voyages" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubPullRequestsUISettings">
@@ -568,9 +573,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="740" y="455" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580198701066" />
-    <state x="617" y="40" key="CommitChangelistDialog2" timestamp="1581369927633">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1581615076776">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1581615076776" />
     <state x="474" y="40" key="CommitChangelistDialog2/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579300618428" />
     <state x="617" y="40" key="CommitChangelistDialog2/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581369927633" />
     <state x="92" y="132" width="1736" height="856" key="DiffContextDialog" timestamp="1580912531001">
