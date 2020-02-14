@@ -8,6 +8,7 @@ use App\Repository\CityRepository;
 use App\Repository\CountryRepository;
 use App\Repository\NewsRepository;
 use App\Repository\PictureRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,6 +19,7 @@ class ProfileHomeController extends AbstractController
 {
     /**
      * @Route("/", name="homepage")
+     * @param PaginatorInterface $paginator
      * @param CountryRepository $countryRepository
      * @param NewsRepository $newsRepository
      * @param Request $request
@@ -25,7 +27,7 @@ class ProfileHomeController extends AbstractController
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
-    public function index(CountryRepository $countryRepository,NewsRepository $newsRepository, Request $request, pictureRepository $pictureRepository ,AuthenticationUtils $authenticationUtils)
+    public function index(PaginatorInterface $paginator,CountryRepository $countryRepository,NewsRepository $newsRepository, Request $request, pictureRepository $pictureRepository ,AuthenticationUtils $authenticationUtils)
     {
         $news = $newsRepository->findAll();
         $countries = $countryRepository->findAll();
@@ -33,6 +35,7 @@ class ProfileHomeController extends AbstractController
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
         $pictures = $pictureRepository->findSearch($data);
+        $pagination = $paginator->paginate($pictures, $request->query->getInt('page', 1) ,6);
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
@@ -42,7 +45,7 @@ class ProfileHomeController extends AbstractController
             'lastUsername' => $lastUsername,
             '$error' => $error,
             'form' => $form->createView(),
-            'pictures' => $pictures,
+            'pictures' => $pagination,
             'news' => $news,
             'countries' => $countries
         ]);

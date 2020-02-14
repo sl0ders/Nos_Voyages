@@ -2,26 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5a2918b-f41f-42d0-9e11-845289521b48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/pictures/IMG_5256.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/pictures/IMG_5271.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/pictures/2014-04-05 14.59.52.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/pictures/20140405_144845.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/pictures/20140405_144931.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/pictures/20140406_105436.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/pictures/20140406_124031.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/pictures/20160829_151636.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/pictures/20160902_144115.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/pictures/20160902_150814.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/pictures/20160904_144446.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/pictures/IMG_5252.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/pictures/IMG_5257.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pagination/twitter_bootstrap_v4_pagination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nos_Voyages.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Nos_Voyages.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/australie_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/australie_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/profile/ProfileCommentController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/News.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Admin/comment/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/comment/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Admin/country/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/country/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Profile/city/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Profile/city/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Profile/comment/new.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Profile/news/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Profile/news/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/lightbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/lightbox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/getLink()" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/knp_paginator.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/arrowhead.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/profile/ProfileHomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/profile/ProfileHomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Profile/picture/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Profile/picture/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Profile/picture/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Profile/picture/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layout/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/_header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layout/_sidebar_left.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/_sidebar_left.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout/_sidebar_right.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/_sidebar_right.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +216,8 @@
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
       <path value="$PROJECT_DIR$/vendor/twbs/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
     </include_path>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -225,7 +241,7 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/vendor/symfony/form/FormView.php&#10;C:/wamp64/www/ProjetsHorsFormation/Nos_Voyages/public/build/entrypoints.json&#10;C:/wamp64/www/Nos_Voyages/public/build/entrypoints.json" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../CV/project.html" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -234,18 +250,16 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="Push.Settings">
+    <force-push-targets>
+      <force-push-target remote-path="origin" branch="Nos_Voyages" />
+    </force-push-targets>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Nos_Voyages\templates\Admin\picture" />
-      <recent name="C:\wamp64\www\Nos_Voyages\templates\Admin" />
-      <recent name="C:\wamp64\www\Nos_Voyages\public\img" />
-      <recent name="C:\wamp64\www\Nos_Voyages\public\css" />
-      <recent name="C:\wamp64\www\Nos_Voyages\public\js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\ProjetsHorsFormation\Nos_Voyages\public\Fonts" />
       <recent name="C:\wamp64\www\ProjetsHorsFormation\Nos_Voyages\public\js" />
@@ -253,6 +267,18 @@
       <recent name="C:\wamp64\www\ProjetsHorsFormation\Nos_Voyages\templates\Profile" />
       <recent name="C:\wamp64\www\ProjetsHorsFormation\Nos_Voyages\src\Controller\profile" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ProjetsHorsFormation\Nos_Voyages\templates\pagination" />
+      <recent name="C:\wamp64\www\ProjetsHorsFormation\Nos_Voyages\templates\sortable" />
+      <recent name="C:\wamp64\www\Nos_Voyages\templates\Admin\picture" />
+      <recent name="C:\wamp64\www\Nos_Voyages\templates\Admin" />
+      <recent name="C:\wamp64\www\Nos_Voyages\public\img" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="view" />
+    </option>
   </component>
   <component name="RunManager" selected="npm.build">
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -364,7 +390,16 @@
       <workItem from="1581276773067" duration="2953000" />
       <workItem from="1581320860559" duration="27239000" />
       <workItem from="1581407431000" duration="11596000" />
-      <workItem from="1581427730111" duration="9683000" />
+      <workItem from="1581427730111" duration="12645000" />
+      <workItem from="1581494831116" duration="5168000" />
+      <workItem from="1581500030713" duration="7220000" />
+      <workItem from="1581578640732" duration="1182000" />
+      <workItem from="1581588149690" duration="299000" />
+      <workItem from="1581588464236" duration="196000" />
+      <workItem from="1581588679203" duration="56000" />
+      <workItem from="1581588751758" duration="13564000" />
+      <workItem from="1581695207668" duration="318000" />
+      <workItem from="1581695586011" duration="273000" />
     </task>
     <task id="LOCAL-00001" summary="mise en place des entités et de base.html.twig">
       <created>1579288821924</created>
@@ -464,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581369928496</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Amelioration du design">
+      <created>1581440921557</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1581440921557</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,34 +542,48 @@
     <MESSAGE value="gestion du responsive dans la partie admin pour chaque section" />
     <MESSAGE value="gestion du responsive des tables dans la partie admin" />
     <MESSAGE value="mise en ligne du site sur http://voyages.webagency-shop.fr debuggage des quelques bugs restant et changement de la police principale" />
-    <option name="LAST_COMMIT_MESSAGE" value="mise en ligne du site sur http://voyages.webagency-shop.fr debuggage des quelques bugs restant et changement de la police principale" />
+    <MESSAGE value="Amelioration du design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Amelioration du design" />
   </component>
   <component name="WindowStateProjectService">
     <state x="339" y="50" key="#Deployment" timestamp="1579828887364">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="339" y="50" key="#Deployment/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579828887364" />
-    <state x="352" y="50" key="#Project_Structure" timestamp="1581156161334">
+    <state x="352" y="50" key="#Menus_and_Toolbars" timestamp="1581588098517">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="352" y="50" key="#Project_Structure/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581156161334" />
+    <state x="352" y="50" key="#Menus_and_Toolbars/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581588098517" />
+    <state x="352" y="50" key="#Notifications" timestamp="1581588320104">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="352" y="50" key="#Notifications/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581588320104" />
+    <state x="352" y="50" key="#Project_Structure" timestamp="1581588197110">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="352" y="50" key="#Project_Structure/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581588197110" />
     <state x="552" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580840343608">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="552" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580840343608" />
-    <state x="649" y="319" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581341212598">
+    <state x="649" y="319" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581611298564">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="649" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579359096655" />
-    <state x="649" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581341212598" />
+    <state x="649" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581611298564" />
+    <state x="614" y="325" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1581617005382">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="614" y="325" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581617005382" />
     <state x="677" y="140" key="#com.intellij.ide.util.MemberChooser" timestamp="1580922786330">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="677" y="140" key="#com.intellij.ide.util.MemberChooser/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580922786330" />
-    <state x="640" y="261" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581157615741">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state x="2560" y="221" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581695434268">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="261" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581157615741" />
+    <state x="2560" y="221" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1581695434268" />
     <state x="0" y="40" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581155361697">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -546,11 +602,11 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="740" y="455" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580198701066" />
-    <state x="617" y="40" key="CommitChangelistDialog2" timestamp="1581369927633">
+    <state x="308" y="40" key="CommitChangelistDialog2" timestamp="1581440920957">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="474" y="40" key="CommitChangelistDialog2/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579300618428" />
-    <state x="617" y="40" key="CommitChangelistDialog2/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581369927633" />
+    <state x="308" y="40" key="CommitChangelistDialog2/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581440920957" />
     <state x="92" y="132" width="1736" height="856" key="DiffContextDialog" timestamp="1580912531001">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -559,40 +615,45 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="516" y="223" key="EditFileWatcherDialog/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579287292138" />
-    <state x="640" y="199" key="FileChooserDialogImpl" timestamp="1581424309651">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state x="2560" y="159" key="FileChooserDialogImpl" timestamp="1581671682183">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="199" key="FileChooserDialogImpl/0.40.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1579449690557" />
     <state x="640" y="199" key="FileChooserDialogImpl/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579392002475" />
-    <state x="640" y="199" key="FileChooserDialogImpl/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581424309651" />
-    <state width="1859" height="139" key="GridCell.Tab.0.bottom" timestamp="1581438802887">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state x="640" y="199" key="FileChooserDialogImpl/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581617003674" />
+    <state x="2560" y="159" key="FileChooserDialogImpl/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1581671682183" />
+    <state width="1859" height="135" key="GridCell.Tab.0.bottom" timestamp="1581695804257">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1859" height="101" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1581327152146" />
-    <state width="1859" height="139" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581438802887" />
-    <state width="1859" height="139" key="GridCell.Tab.0.center" timestamp="1581438802887">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1859" height="135" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581626652747" />
+    <state width="1859" height="135" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1581695804257" />
+    <state width="1859" height="135" key="GridCell.Tab.0.center" timestamp="1581695804257">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1859" height="101" key="GridCell.Tab.0.center/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1581327152145" />
-    <state width="1859" height="139" key="GridCell.Tab.0.center/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581438802887" />
-    <state width="1859" height="139" key="GridCell.Tab.0.left" timestamp="1581438802887">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1859" height="135" key="GridCell.Tab.0.center/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581626652747" />
+    <state width="1859" height="135" key="GridCell.Tab.0.center/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1581695804257" />
+    <state width="1859" height="135" key="GridCell.Tab.0.left" timestamp="1581695804257">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1859" height="101" key="GridCell.Tab.0.left/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1581327152145" />
-    <state width="1859" height="139" key="GridCell.Tab.0.left/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581438802887" />
-    <state width="1859" height="139" key="GridCell.Tab.0.right" timestamp="1581438802887">
-      <screen x="0" y="40" width="1920" height="1040" />
+    <state width="1859" height="135" key="GridCell.Tab.0.left/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581626652747" />
+    <state width="1859" height="135" key="GridCell.Tab.0.left/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1581695804257" />
+    <state width="1859" height="135" key="GridCell.Tab.0.right" timestamp="1581695804257">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1859" height="101" key="GridCell.Tab.0.right/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1581327152146" />
-    <state width="1859" height="139" key="GridCell.Tab.0.right/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581438802887" />
+    <state width="1859" height="135" key="GridCell.Tab.0.right/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581626652747" />
+    <state width="1859" height="135" key="GridCell.Tab.0.right/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1581695804257" />
     <state width="262" height="729" key="HiddenNamespacesPopup" timestamp="1580840236706">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state width="262" height="729" key="HiddenNamespacesPopup/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580840236706" />
-    <state x="340" y="169" key="IDE.errors.dialog" timestamp="1580670152859">
+    <state x="340" y="169" key="IDE.errors.dialog" timestamp="1581620327761">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="340" y="169" key="IDE.errors.dialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580670152859" />
+    <state x="340" y="169" key="IDE.errors.dialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581620327761" />
     <state x="736" y="270" key="NewPhpClassDialog" timestamp="1580947664773">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -602,16 +663,20 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="754" y="446" key="NewPhpFileDialog/0.40.1920.1040/-1920.0.1920.1040/1920.0.1920.1040@0.40.1920.1040" timestamp="1579425891474" />
-    <state x="251" y="40" key="SettingsEditor" timestamp="1581266562886">
+    <state x="251" y="40" key="SettingsEditor" timestamp="1581613105897">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="251" y="40" key="SettingsEditor/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579343496823" />
-    <state x="251" y="40" key="SettingsEditor/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581266562886" />
-    <state x="352" y="138" key="Vcs.Push.Dialog.v2" timestamp="1581440874470">
+    <state x="251" y="40" key="SettingsEditor/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581613105897" />
+    <state width="805" height="596" key="SwitcherDM" timestamp="1581588224885">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="805" height="596" key="SwitcherDM/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581588224885" />
+    <state x="352" y="138" key="Vcs.Push.Dialog.v2" timestamp="1581442429885">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="352" y="138" key="Vcs.Push.Dialog.v2/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579289178374" />
-    <state x="352" y="138" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581440874470" />
+    <state x="352" y="138" key="Vcs.Push.Dialog.v2/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581442429885" />
     <state x="-1828" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581276357683">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -622,6 +687,10 @@
     </state>
     <state x="-1828" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1581329164953" />
     <state x="92" y="132" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581438057865" />
+    <state x="709" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581588227653">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="709" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581588227653" />
     <state x="705" y="-28" width="1257" height="967" maximized="true" key="dock-window-1" timestamp="1581087255648">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -634,12 +703,16 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="-26" y="-20" width="1936" height="1048" maximized="true" key="dock-window-3/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581089730481" />
-    <state x="576" y="96" width="1020" height="984" key="find.popup" timestamp="1581428823542">
+    <state x="576" y="96" width="1020" height="984" key="find.popup" timestamp="1581513871771">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="528" y="126" width="863" height="868" key="find.popup/0.40.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1579303326779" />
     <state x="-1344" y="56" width="1020" height="984" key="find.popup/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1581329501467" />
-    <state x="576" y="96" width="1020" height="984" key="find.popup/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581428823542" />
+    <state x="576" y="96" width="1020" height="984" key="find.popup/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581513871771" />
+    <state x="663" y="248" key="git4idea.merge.GitMergeDialog" timestamp="1581442789652">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="663" y="248" key="git4idea.merge.GitMergeDialog/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581442789652" />
     <state x="714" y="343" width="492" height="438" key="git4idea.rebase.GitRebaseDialog" timestamp="1580291842624">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
@@ -648,6 +721,10 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="233" y="195" width="1454" height="885" key="new project wizard/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1580764815557" />
+    <state x="577" y="254" width="1009" height="1469" key="run.anything.popup" timestamp="1581588280041">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="577" y="254" width="1009" height="1469" key="run.anything.popup/0.40.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.40.1920.1040" timestamp="1581588280041" />
     <state x="453" y="40" width="1009" height="1036" key="search.everywhere.popup" timestamp="1580922783039">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

@@ -1,13 +1,16 @@
     {% if not is_granted("ROLE_ADMIN") %}
         <h2 class="font-weight-bold text-center m-3">Nos destinations</h2>
+    <div class="container sticky-top">
         {% for country in countries %}
-            <a class="text-decoration-none" href="{{ path('profile_country_index', {'name':  country.name }) }}">
-                <button type="submit" class="p-1 btn btn-primary w-100 d-flex justify-content-between">
-                    <span class="h5">{{ country.name }}</span>
-                    <img class="mt-auto mb-auto" width="35" height="35" src="../img/{{ country.name }}_logo.png" alt="">
-                </button>
-            </a>
+                <a class="text-decoration-none" href="{{ path('profile_country_index', {'name':  country.name }) }}">
+                    <button type="submit" class="p-1 btn btn-primary w-100 d-flex justify-content-between">
+                        <span class="h5">{{ country.name }}</span>
+                        <img class="mt-auto mb-auto" width="35" height="35" src="../img/{{ country.name }}_logo.png"
+                             alt="">
+                    </button>
+                </a>
         {% endfor %}
+    </div>
     {% endif %}
     {% if is_granted("ROLE_ADMIN") %}
         <div class="mt-5">

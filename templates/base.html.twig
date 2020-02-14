@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-
-        <link rel="icon" href="{{ asset('img/favicon.ico') }}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{{ asset('img/favicon.ico') }}"/>
     <link rel="stylesheet" href="{{ asset('css/lightbox.css') }}">
     <script src="{{ asset('js/lightbox.js') }}" type="module" defer></script>
     {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
@@ -16,9 +16,9 @@
 {% endblock %}
 
 <main class="container-fluid">
-    <div class="row">
+    <div class="row" style="background-color: rgba(255, 255, 255, 0.5);">
         <div class="part-left col-md-2">
-        {{ render(controller('App\\Controller\\LayoutBundleController::leftMenuAction')) }}
+            {{ render(controller('App\\Controller\\LayoutBundleController::leftMenuAction')) }}
         </div>
 
         <div class="part-center h-100 m-auto font-weight-bold col-md-8">
@@ -27,9 +27,9 @@
         </div>
 
         <div class="part-right col-md-2">
-        {% block sidebar_right %}
-            {{ render(controller('App\\Controller\\LayoutBundleController::rightMenuAction')) }}
-        {% endblock %}
+            {% block sidebar_right %}
+                {{ render(controller('App\\Controller\\LayoutBundleController::rightMenuAction')) }}
+            {% endblock %}
         </div>
     </div>
 </main>
@@ -37,12 +37,10 @@
 {% block footer %}
     {% include('layout/_footer.html.twig') %}
 {% endblock %}
-
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-                 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-                 crossorigin="anonymous">
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
 </script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
 </body>
 </html>

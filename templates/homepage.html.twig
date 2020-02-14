@@ -22,9 +22,13 @@
     </div>
     <div class="gridhome">
         {% for picture in pictures %}
-            <a style="overflow: hidden;" href="{{ vich_uploader_asset(picture, 'imageFile')  }}">
-                <img src="{{ vich_uploader_asset(picture, 'imageFile') |imagine_filter('thumb')}}" alt="">
-            </a>
+        <tr {% if loop.index is odd %}class="color"{% endif %}>
+            <td>
+                <a style="overflow: hidden;" href="{{ vich_uploader_asset(picture, 'imageFile') }}">
+                    <img src="{{ vich_uploader_asset(picture, 'imageFile') |imagine_filter('thumb') }}" alt="">
+                </a>
+            </td>
         {% endfor %}
     </div>
+    {{ knp_pagination_render(pictures) }}
 {% endblock %}

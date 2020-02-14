@@ -150,6 +150,12 @@
     "jms/metadata": {
         "version": "1.7.0"
     },
+    "knplabs/knp-components": {
+        "version": "v2.3.2"
+    },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v5.1.1"
+    },
     "laminas/laminas-zendframework-bridge": {
         "version": "1.0.1"
     },

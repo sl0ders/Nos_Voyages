@@ -4,24 +4,14 @@
 
 {% block body %}
     <h2>Photo de {{ city }}</h2>
-    <div class="grid">
-
+    <div class="gridhome overflow-hidden">
     {% for picture in pictures %}
         {% if picture.filename %}
-            <div class="d-flex flex-wrap">
-                <a class="d-flex m-auto" href="{{ path('profile_picture_show', {'id': picture.id , 'country': picture.country, 'city' : picture.city}) }}">
+                <a class="text-center" style="margin-bottom: 20px;" href="{{ path('profile_picture_show', {'id': picture.id , 'country': picture.country, 'city' : picture.city}) }}">
                     Voir les details de la photo
+                    <img src="{{ vich_uploader_asset(picture, 'imageFile') | imagine_filter('thumb')}}" alt="">
                 </a>
-                <a class="w-100" href="{{ vich_uploader_asset(picture, 'imageFile') }}">
-                    <img src="{{ vich_uploader_asset(picture, 'imageFile') }}" alt="">
-                    <div class="bubble-text">
-                        <h3>{{ picture.title }}</h3>
-                        <p>{{ picture.description }}...</p>
-                        <em>{{ picture.author }} le {{ picture.dayOfTaking }}</em>
-                    </div>
-                </a>
-            </div>
-            </div>
         {% endif %}
     {% endfor %}
+    </div>
 {% endblock %}
