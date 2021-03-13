@@ -102,6 +102,12 @@ class Picture
      */
     private $localisation;
 
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $liked;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -259,5 +265,17 @@ class Picture
     public function __toString(): string
     {
         return $this->title;
+    }
+
+    public function getLiked(): ?int
+    {
+        return $this->liked;
+    }
+
+    public function setLiked(?int $liked): self
+    {
+        $this->liked = $liked;
+
+        return $this;
     }
 }

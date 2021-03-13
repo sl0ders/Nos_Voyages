@@ -35,6 +35,7 @@ class ProfileHomeController extends AbstractController
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
         $pictures = $pictureRepository->findSearch($data);
+
         $pagination = $paginator->paginate($pictures, $request->query->getInt('page', 1) ,6);
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();

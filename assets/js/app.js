@@ -1,7 +1,17 @@
 const $ = require('jquery');
+import 'bootstrap';
 import '../css/app.css';
-import 'jquery'
-import 'bootstrap'
+import 'jquery';
+import React from "react";
+import ReactDOM from "react-dom";
+import LikeButton from "./component/LikeButton";
+
+document.querySelectorAll('span.react-likes').forEach((span) => {
+    const likes = +span.dataset.likes;
+    const isLiked = +span.dataset.isLiked === 1;
+    ReactDOM.render(<LikeButton likes={likes} isLiked={isLiked} />, span)
+});
+
 
 /*
  * Welcome to your app's main JavaScript file!

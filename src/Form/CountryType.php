@@ -8,13 +8,16 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\VichUploaderBundle;
 
 class CountryType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class,['label' => 'Nom du pays']);
+            ->add('name', TextType::class, ['label' => 'Nom du pays'])
+            ->add("map", FileType::class, ['label' => "Image representant la carte du pays"])
+            ->add("smallPng", FileType::class, ['label' => "Icone du pays"]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

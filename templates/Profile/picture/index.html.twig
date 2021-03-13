@@ -5,13 +5,22 @@
 {% block body %}
     <h2>Photo de {{ city }}</h2>
     <div class="gridhome overflow-hidden">
-    {% for picture in pictures %}
-        {% if picture.filename %}
-                <a class="text-center" style="margin-bottom: 20px;" href="{{ path('profile_picture_show', {'id': picture.id , 'country': picture.country, 'city' : picture.city}) }}">
-                    Voir les details de la photo
-                    <img src="{{ vich_uploader_asset(picture, 'imageFile') | imagine_filter('thumb')}}" alt="">
-                </a>
-        {% endif %}
-    {% endfor %}
+        {% for picture in pictures %}
+            {% if picture.filename %}
+                <div class="text-center">
+                    <a style="overflow: hidden;" href="{{ vich_uploader_asset(picture, 'imageFile') }}">
+                        <img src="{{ vich_uploader_asset(picture, 'imageFile') | imagine_filter('thumb') }}" alt="">
+                    </a>
+                    <div class="text-center" style="margin-bottom: 20px"><a
+                                href="{{ path('profile_picture_show', {'id': picture.id , 'country': picture.country, 'city' : picture.city}) }}">
+                            Voir les details de la photo
+                        </a>
+
+                        <span class="react-likes" data-likes="{{ picture.liked }}" data-is-liked=""/>
+                    </div>
+                </div>
+
+            {% endif %}
+        {% endfor %}
     </div>
 {% endblock %}

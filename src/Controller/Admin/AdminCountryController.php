@@ -7,6 +7,7 @@ use App\Entity\Country;
 use App\Form\CityType;
 use App\Form\CountryType;
 use App\Repository\CountryRepository;
+use App\Services\CreateFileServices;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,9 +22,10 @@ class AdminCountryController extends AbstractController
      * @Route("/", name="admin_country_index", methods={"GET","POST"})
      * @param Request $request
      * @param CountryRepository $countryRepository
+     * @param CreateFileServices $createFileServices
      * @return Response
      */
-    public function index(Request $request, CountryRepository $countryRepository): Response
+    public function index(Request $request, CountryRepository $countryRepository, CreateFileServices $createFileServices): Response
     {
         $city = new City();
         $form = $this->createForm(CityType::class, $city);
@@ -41,8 +43,18 @@ class AdminCountryController extends AbstractController
         $form = $this->createForm(CountryType::class, $country);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $country->setMap('img/' . $country->getName() . '_map.png');
-            $country->setSmallPng('img/' . $country->getName() . '_logo.png');
+            // determine a final path of both file in parameters
+            $path = $this->getParameter("country_path");
+            // retrieve of map en icon image
+            $fileMap = $form["map"]->getData();
+            $fileSmallPng = $form["smallPng"]->getData();
+            // retrieve name of this country
+            $countryName = $form['name']->getData();
+            //the function fileMap create a new file
+            $newMapPath = $createFileServices->fileMap($fileMap, $countryName, $path);
+            $newSmallPngPath = $createFileServices->fileMap($fileSmallPng, $countryName, $path);
+            $country->setMap($newMapPath);
+            $country->setSmallPng($newSmallPngPath);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($country);
             $entityManager->flush();

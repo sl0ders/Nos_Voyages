@@ -1,2 +1,2 @@
 #!/bin/sh
-rsync -av ./ u95153084@home756786028.1and1-data.host:NosVoyages --include=public/.htaccess --include=vendor --exclude-from=.gitignore --exclude=".*"
+rsync -av ./ u95153084@home756786028.1and1-data.host:NosVoyages --include=public/.htaccess --include=vendor --include=public/build --exclude-from=.gitignore --exclude=".*"

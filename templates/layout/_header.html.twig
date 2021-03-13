@@ -22,11 +22,11 @@
                     <div class="nav-link text-center">
                         <form action="{{ path('app_login') }}" method="post" class="form-group">
                             <label for="adresse_email">
-                                <input type="text" name="_username" placeholder="Adresse email ..." id="adresse_email"
+                                <input type="email" name="_username" placeholder="Adresse email ..." id="adresse_email"
                                        class="form-control">
                             </label>
                             <label for="mot_de_passe">
-                                <input type="text" name="_password" id="mot_de_passe" placeholder="Mot de passe ..."
+                                <input type="password" name="_password" id="mot_de_passe" placeholder="Mot de passe ..."
                                        class="form-control">
                             </label>
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">

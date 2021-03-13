@@ -31,6 +31,7 @@ class AdminUserController extends AbstractController
      * @Route("/new", name="admin_user_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
+     * @throws \Exception
      */
     public function new(Request $request): Response
     {

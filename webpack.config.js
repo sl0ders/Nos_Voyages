@@ -33,7 +33,6 @@ Encore
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
     .enableSingleRuntimeChunk()
-
     /*
      * FEATURE CONFIG
      *
@@ -48,9 +47,8 @@ Encore
     .enableVersioning(Encore.isProduction())
 
     // enables @babel/preset-env polyfills
-    .configureBabelPresetEnv((config) => {
-        config.useBuiltIns = 'usage';
-        config.corejs = 3;
+    .configureBabel(function(babelConfig){
+        babelConfig.plugins.push("@babel/plugin-proposal-class-properties")
     })
 
     // enables Sass/SCSS support
@@ -67,7 +65,7 @@ Encore
     //.autoProvidejQuery()
 
     // uncomment if you use API Platform Admin (composer req api-admin)
-    //.enableReactPreset()
+    .enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
 ;
 

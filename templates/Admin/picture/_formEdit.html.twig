@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+ {{ form_row(form.imageFile) }}
+ {{ form_row(form.title) }}
+ {{ form_row(form.description) }}
+ {{ form_row(form.author) }}
+<button class="btn btn-sm btn-primary">{{ button_label|default('Modifier') }}</button>
+{{ form_end(form) }}
